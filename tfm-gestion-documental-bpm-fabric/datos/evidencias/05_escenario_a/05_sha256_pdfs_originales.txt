@@ -1,0 +1,10 @@
+a246a0ae34f7d67a865faa4338b2a44712762b0e096100e8b8cbfb5470763991  /tmp/dataset/DOC-A-001.pdf
+8d210104848c21ca977d17ed4bfc753ba7d639feb49f7b8da1c42f8714e342ec  /tmp/dataset/DOC-A-002.pdf
+5ca0f5988a5a3e1fbf7d3b44dc46ab189e1e6e11a3a29e30e66d159534a8f218  /tmp/dataset/DOC-A-003.pdf
+74731b46380094e3b15daa7ea6b8430b921606febe0f67a52b0b42e995d73eb4  /tmp/dataset/DOC-A-004.pdf
+64bd789a0b769a8caaa8e78098c45cbd618a756ebbb73d2769ff1aa0279cd9c3  /tmp/dataset/DOC-A-005.pdf
+1b9800038fe3443fad0b5dbe4ce760061fbe65da973f686cd9937e410148c504  /tmp/dataset/DOC-A-006.pdf
+be62a8a2165d878d19392310a2a571a2015494c8049749cd6bb55193107dfe94  /tmp/dataset/DOC-A-007.pdf
+0a64acd12ca6babfae8af5efa4a3f8e0e45d5e619d51a50ea5f61d0bb35015d6  /tmp/dataset/DOC-A-008.pdf
+abe580aaf04ea627b6503c229ecc391fe7dfccfa2b046f1bfc08f69ec2e7e533  /tmp/dataset/DOC-A-009.pdf
+9236fcd40fcbeaffce6adb3c890704e3f21051e76c59027f67f7e73a2e89ae7e  /tmp/dataset/DOC-A-010.pdf

@@ -1,0 +1,10 @@
+nohup: ignoring input
+2026/06/25 02:25:24 [main] offchain en /opt/tfm-camunda/offchain
+2026/06/25 02:25:24 [main] fabric enabled=true
+2026/06/25 02:25:24 [main] HTTP API escuchando en :3000
+2026/06/25 02:25:24 [worker] iniciando: workerId=api-gateway-worker, topics=8, fabric=true
+2026/06/25 02:25:24 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 completed
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] persistir metadata para DOC-TEST-001
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 completed

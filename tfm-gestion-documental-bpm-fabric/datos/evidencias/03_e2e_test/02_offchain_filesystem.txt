@@ -1,0 +1,4 @@
+total 12
+drwxr-xr-x 2 azureuser azureuser 4096 Jun 25 02:25 .
+drwxr-xr-x 3 azureuser azureuser 4096 Jun 25 02:25 ..
+-rw-r--r-- 1 azureuser azureuser   20 Jun 25 02:25 v1_20260625T022524Z_test.pdf

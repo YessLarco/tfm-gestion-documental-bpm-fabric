@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_GestionDocumental" targetNamespace="Camunda" exporter="Camunda Modeler" exporterVersion="5.48.0">
+  <bpmn:collaboration id="Collaboration_GestionDocumental">
+    <bpmn:extensionElements />
+    <bpmn:participant id="Participant_GestionDocumental" name="Gestión documental" processRef="Process_GestionDocumental" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_GestionDocumental" name="Gestión documental" isExecutable="true" camunda:historyTimeToLive="180">
+    <bpmn:laneSet id="LaneSet_GestionDocumental">
+      <bpmn:lane id="Lane_SistemaBPM_APIGateway" name="Sistema BPM / API Gateway">
+        <bpmn:flowNodeRef>ST_CalcularHashEInvocarCrearDocumento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_FinProceso</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_CalcularNuevoHashYRegistrarReenviado</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_InvocarPublicarDocumento</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Registrador" name="Registrador">
+        <bpmn:flowNodeRef>StartEvent_InicioProceso</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UT_CrearDocumentoYCargar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UT_CorregirYCargarNuevaVersion</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Revisor" name="Revisor">
+        <bpmn:flowNodeRef>UT_RevisarDocumento</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_DocumentoAprobadoPorRevisor</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_LegalCompliance" name="Legal/Compliance">
+        <bpmn:flowNodeRef>GW_CumpleValidacionLegal</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>UT_ValidacionLegalYCumplimiento</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Publicador" name="Publicador">
+        <bpmn:flowNodeRef>UT_PublicarOArchivarVersionFinal</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Fabric_RepositorioOffChain" name="Hyperledger Fabric / Repositorio off chain">
+        <bpmn:flowNodeRef>ST_PersistirHashDocActorEventoCreadoYGuardarOffChain</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_RegistrarDecisionRevisor</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_RegistrarDecisionLegal</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_RegistrarPublicadoYHistorialVerificable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ST_ActualizarEvidenciaOnChainYVersionOffChain</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_InicioProceso" name="Inicio">
+      <bpmn:outgoing>Flow_0khc4ha</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="UT_CrearDocumentoYCargar" name="Crear documento y cargar">
+      <bpmn:incoming>Flow_0khc4ha</bpmn:incoming>
+      <bpmn:outgoing>Flow_0mt9l9w</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" name="Persistir hash, doc_id, actor y evento CREADO; guardar archivo off-chain" camunda:type="external" camunda:topic="persistir-hash-doc-guardar-offchain">
+      <bpmn:incoming>Flow_1yzg402</bpmn:incoming>
+      <bpmn:outgoing>Flow_1up42ny</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ST_CalcularHashEInvocarCrearDocumento" name="Calcular hash e invocar crearDocumento()" camunda:type="external" camunda:topic="calcular-hash-crear-documento">
+      <bpmn:incoming>Flow_0mt9l9w</bpmn:incoming>
+      <bpmn:outgoing>Flow_1yzg402</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1g1haei" name="No" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="UT_CorregirYCargarNuevaVersion">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${documentoAprobadoPorRevisor == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_06o27jw" name="No" sourceRef="GW_CumpleValidacionLegal" targetRef="UT_CorregirYCargarNuevaVersion">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${cumpleValidacionLegal == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1xypccz" sourceRef="UT_CorregirYCargarNuevaVersion" targetRef="ST_CalcularNuevoHashYRegistrarReenviado" />
+    <bpmn:sequenceFlow id="Flow_0khc4ha" sourceRef="StartEvent_InicioProceso" targetRef="UT_CrearDocumentoYCargar" />
+    <bpmn:sequenceFlow id="Flow_0mt9l9w" sourceRef="UT_CrearDocumentoYCargar" targetRef="ST_CalcularHashEInvocarCrearDocumento" />
+    <bpmn:sequenceFlow id="Flow_1yzg402" sourceRef="ST_CalcularHashEInvocarCrearDocumento" targetRef="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" />
+    <bpmn:sequenceFlow id="Flow_1up42ny" sourceRef="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" targetRef="UT_RevisarDocumento" />
+    <bpmn:sequenceFlow id="Flow_11jzj94" sourceRef="UT_ValidacionLegalYCumplimiento" targetRef="GW_CumpleValidacionLegal" />
+    <bpmn:sequenceFlow id="Flow_15sk3ua" sourceRef="UT_RevisarDocumento" targetRef="GW_DocumentoAprobadoPorRevisor" />
+    <bpmn:sequenceFlow id="Flow_1893a8o" sourceRef="ST_CalcularNuevoHashYRegistrarReenviado" targetRef="ST_ActualizarEvidenciaOnChainYVersionOffChain" />
+    <bpmn:sequenceFlow id="Flow_1wt48q7" sourceRef="UT_PublicarOArchivarVersionFinal" targetRef="ST_InvocarPublicarDocumento" />
+    <bpmn:sequenceFlow id="Flow_1rgvzbd" sourceRef="ST_InvocarPublicarDocumento" targetRef="ST_RegistrarPublicadoYHistorialVerificable" />
+    <bpmn:sequenceFlow id="Flow_0bfodn9" sourceRef="ST_ActualizarEvidenciaOnChainYVersionOffChain" targetRef="UT_RevisarDocumento" />
+    <bpmn:sequenceFlow id="Flow_0t06vbw" sourceRef="ST_RegistrarPublicadoYHistorialVerificable" targetRef="EndEvent_FinProceso" />
+    <bpmn:serviceTask id="ST_RegistrarDecisionRevisor" name="Sincronizar decisión del revisor on-chain (AprobadoRevisión)" camunda:type="external" camunda:topic="registrar-decision-revisor">
+      <bpmn:incoming>Flow_0nc43nh</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wwip0x</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1u7xitz" name="SI" sourceRef="GW_CumpleValidacionLegal" targetRef="ST_RegistrarDecisionLegal" />
+    <bpmn:sequenceFlow id="Flow_0bxpb7c" sourceRef="ST_RegistrarDecisionLegal" targetRef="UT_PublicarOArchivarVersionFinal" />
+    <bpmn:sequenceFlow id="Flow_0nc43nh" name="SI" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="ST_RegistrarDecisionRevisor" />
+    <bpmn:serviceTask id="ST_RegistrarDecisionLegal" name="Sincronizar decisión legal on-chain (AprobadoLegal)" camunda:type="external" camunda:topic="registrar-decision-legal">
+      <bpmn:incoming>Flow_1u7xitz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0bxpb7c</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ST_RegistrarPublicadoYHistorialVerificable" name="Registrar PUBLICADO e historial verificable" camunda:type="external" camunda:topic="registrar-publicado-historial-verificable">
+      <bpmn:incoming>Flow_1rgvzbd</bpmn:incoming>
+      <bpmn:outgoing>Flow_0t06vbw</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_FinProceso" name="Fin">
+      <bpmn:incoming>Flow_0t06vbw</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="UT_PublicarOArchivarVersionFinal" name="Publicar o archivar versión final">
+      <bpmn:incoming>Flow_0bxpb7c</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wt48q7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="GW_CumpleValidacionLegal" name="¿Cumple validación legal/compliance?">
+      <bpmn:incoming>Flow_11jzj94</bpmn:incoming>
+      <bpmn:outgoing>Flow_06o27jw</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1u7xitz</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0wwip0x" sourceRef="ST_RegistrarDecisionRevisor" targetRef="UT_ValidacionLegalYCumplimiento" />
+    <bpmn:userTask id="UT_ValidacionLegalYCumplimiento" name="Validación legal y de cumplimiento">
+      <bpmn:incoming>Flow_0wwip0x</bpmn:incoming>
+      <bpmn:outgoing>Flow_11jzj94</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="UT_RevisarDocumento" name="Revisar documento">
+      <bpmn:incoming>Flow_1up42ny</bpmn:incoming>
+      <bpmn:incoming>Flow_0bfodn9</bpmn:incoming>
+      <bpmn:outgoing>Flow_15sk3ua</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="ST_ActualizarEvidenciaOnChainYVersionOffChain" name="Actualizar evidencia on-chain y versión off-chain" camunda:type="external" camunda:topic="actualizar-evidencia-onchain-version-offchain">
+      <bpmn:incoming>Flow_1893a8o</bpmn:incoming>
+      <bpmn:outgoing>Flow_0bfodn9</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ST_CalcularNuevoHashYRegistrarReenviado" name="Calcular nuevo hash y registrar REENVIADO" camunda:type="external" camunda:topic="calcular-nuevo-hash-registrar-reenviado">
+      <bpmn:incoming>Flow_1xypccz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1893a8o</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="UT_CorregirYCargarNuevaVersion" name="Corregir y cargar nueva versión">
+      <bpmn:incoming>Flow_1g1haei</bpmn:incoming>
+      <bpmn:incoming>Flow_06o27jw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xypccz</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="GW_DocumentoAprobadoPorRevisor" name="¿Documento aprobado por revisor?">
+      <bpmn:incoming>Flow_15sk3ua</bpmn:incoming>
+      <bpmn:outgoing>Flow_1g1haei</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0nc43nh</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="ST_InvocarPublicarDocumento" name="Invocar publicarDocumento()" camunda:type="external" camunda:topic="invocar-publicar-documento">
+      <bpmn:incoming>Flow_1wt48q7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rgvzbd</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_GestionDocumental">
+      <bpmndi:BPMNShape id="Participant_1uaacpw_di" bpmnElement="Participant_GestionDocumental" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1500" height="1010" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0zkphlm_di" bpmnElement="Lane_Fabric_RepositorioOffChain" isHorizontal="true">
+        <dc:Bounds x="190" y="878" width="1470" height="212" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_11ez8ge_di" bpmnElement="Lane_Publicador" isHorizontal="true">
+        <dc:Bounds x="190" y="510" width="1470" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0u7qij3_di" bpmnElement="Lane_LegalCompliance" isHorizontal="true">
+        <dc:Bounds x="190" y="360" width="1470" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0ld8apn_di" bpmnElement="Lane_Revisor" isHorizontal="true">
+        <dc:Bounds x="190" y="220" width="1470" height="140" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1u5lrnl_di" bpmnElement="Lane_Registrador" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1470" height="140" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0i11tho_di" bpmnElement="Lane_SistemaBPM_APIGateway" isHorizontal="true">
+        <dc:Bounds x="190" y="660" width="1470" height="218" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14vcqf7_di" bpmnElement="StartEvent_InicioProceso">
+        <dc:Bounds x="272" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="266" y="183" width="47" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cygxh4_di" bpmnElement="UT_CrearDocumentoYCargar">
+        <dc:Bounds x="340" y="120" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10jyvat_di" bpmnElement="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain">
+        <dc:Bounds x="325" y="900" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jpvura_di" bpmnElement="ST_CalcularHashEInvocarCrearDocumento">
+        <dc:Bounds x="330" y="695" width="120" height="110" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_DecisionRevisor" bpmnElement="ST_RegistrarDecisionRevisor">
+        <dc:Bounds x="765" y="900" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_DecisionLegal" bpmnElement="ST_RegistrarDecisionLegal">
+        <dc:Bounds x="1185" y="900" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1gk5z5m" bpmnElement="ST_RegistrarPublicadoYHistorialVerificable">
+        <dc:Bounds x="975" y="900" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_16kkoj8_di" bpmnElement="EndEvent_FinProceso">
+        <dc:Bounds x="1132" y="742" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1131" y="718" width="37" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0i5em4r_di" bpmnElement="UT_PublicarOArchivarVersionFinal">
+        <dc:Bounds x="990" y="540" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0bf9fzk_di" bpmnElement="GW_CumpleValidacionLegal" isMarkerVisible="true">
+        <dc:Bounds x="1015" y="415" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1017" y="466" width="103" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0egumk0_di" bpmnElement="UT_ValidacionLegalYCumplimiento">
+        <dc:Bounds x="880" y="400" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1i34q7e_di" bpmnElement="UT_RevisarDocumento">
+        <dc:Bounds x="510" y="250" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0rsiwu1" bpmnElement="ST_ActualizarEvidenciaOnChainYVersionOffChain">
+        <dc:Bounds x="615" y="900" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1b292ug" bpmnElement="ST_CalcularNuevoHashYRegistrarReenviado">
+        <dc:Bounds x="615" y="690" width="130" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01ccncx_di" bpmnElement="UT_CorregirYCargarNuevaVersion">
+        <dc:Bounds x="630" y="120" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0vxmae7_di" bpmnElement="GW_DocumentoAprobadoPorRevisor" isMarkerVisible="true">
+        <dc:Bounds x="805" y="265" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="865" y="270" width="65" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0046giy_di" bpmnElement="ST_InvocarPublicarDocumento">
+        <dc:Bounds x="990" y="700" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1g1haei_di" bpmnElement="Flow_1g1haei">
+        <di:waypoint x="830" y="265" />
+        <di:waypoint x="830" y="160" />
+        <di:waypoint x="730" y="160" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="837" y="193" width="26" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06o27jw_di" bpmnElement="Flow_06o27jw">
+        <di:waypoint x="1040" y="415" />
+        <di:waypoint x="1040" y="90" />
+        <di:waypoint x="680" y="90" />
+        <di:waypoint x="680" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="882" y="103" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xypccz_di" bpmnElement="Flow_1xypccz">
+        <di:waypoint x="680" y="200" />
+        <di:waypoint x="680" y="690" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0khc4ha_di" bpmnElement="Flow_0khc4ha">
+        <di:waypoint x="308" y="160" />
+        <di:waypoint x="340" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mt9l9w_di" bpmnElement="Flow_0mt9l9w">
+        <di:waypoint x="390" y="200" />
+        <di:waypoint x="390" y="695" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1yzg402_di" bpmnElement="Flow_1yzg402">
+        <di:waypoint x="390" y="805" />
+        <di:waypoint x="390" y="900" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1up42ny_di" bpmnElement="Flow_1up42ny">
+        <di:waypoint x="455" y="955" />
+        <di:waypoint x="480" y="955" />
+        <di:waypoint x="480" y="290" />
+        <di:waypoint x="510" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11jzj94_di" bpmnElement="Flow_11jzj94">
+        <di:waypoint x="980" y="440" />
+        <di:waypoint x="1015" y="440" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15sk3ua_di" bpmnElement="Flow_15sk3ua">
+        <di:waypoint x="610" y="290" />
+        <di:waypoint x="805" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1893a8o_di" bpmnElement="Flow_1893a8o">
+        <di:waypoint x="680" y="790" />
+        <di:waypoint x="680" y="900" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1wt48q7_di" bpmnElement="Flow_1wt48q7">
+        <di:waypoint x="1040" y="620" />
+        <di:waypoint x="1040" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rgvzbd_di" bpmnElement="Flow_1rgvzbd">
+        <di:waypoint x="1040" y="780" />
+        <di:waypoint x="1040" y="900" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bfodn9_di" bpmnElement="Flow_0bfodn9">
+        <di:waypoint x="615" y="950" />
+        <di:waypoint x="560" y="950" />
+        <di:waypoint x="560" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t06vbw_di" bpmnElement="Flow_0t06vbw">
+        <di:waypoint x="1105" y="950" />
+        <di:waypoint x="1150" y="950" />
+        <di:waypoint x="1150" y="778" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1u7xitz_di" bpmnElement="Flow_1u7xitz">
+        <di:waypoint x="1065" y="440" />
+        <di:waypoint x="1350" y="440" />
+        <di:waypoint x="1350" y="950" />
+        <di:waypoint x="1315" y="950" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1105" y="423" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bxpb7c_di" bpmnElement="Flow_0bxpb7c">
+        <di:waypoint x="1250" y="900" />
+        <di:waypoint x="1250" y="580" />
+        <di:waypoint x="1090" y="580" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nc43nh_di" bpmnElement="Flow_0nc43nh">
+        <di:waypoint x="830" y="315" />
+        <di:waypoint x="830" y="900" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="837" y="323" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wwip0x_di" bpmnElement="Flow_0wwip0x">
+        <di:waypoint x="895" y="950" />
+        <di:waypoint x="930" y="950" />
+        <di:waypoint x="930" y="480" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,252 @@
+{
+  "fecha": "2026-06-27T04:58:00.039590+00:00",
+  "total": 10,
+  "exitos_trazabilidad": 8,
+  "CT_porcentaje": 80.0,
+  "errores": 0,
+  "mezcla_usada": "80,10,10",
+  "detalle": [
+    {
+      "doc_id": "DOC-A-001",
+      "pdf_path": "/tmp/dataset/DOC-A-001.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:53:37.768026+00:00",
+      "process_instance_id": "28e42b34-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:54:07.324883+00:00"
+    },
+    {
+      "doc_id": "DOC-A-002",
+      "pdf_path": "/tmp/dataset/DOC-A-002.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:54:09.710817+00:00",
+      "process_instance_id": "3bee9717-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:54:36.005282+00:00"
+    },
+    {
+      "doc_id": "DOC-A-003",
+      "pdf_path": "/tmp/dataset/DOC-A-003.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:54:38.422175+00:00",
+      "process_instance_id": "4d0b89da-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:55:04.718031+00:00"
+    },
+    {
+      "doc_id": "DOC-A-004",
+      "pdf_path": "/tmp/dataset/DOC-A-004.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:55:07.091888+00:00",
+      "process_instance_id": "5e21c6dd-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:55:33.386500+00:00"
+    },
+    {
+      "doc_id": "DOC-A-005",
+      "pdf_path": "/tmp/dataset/DOC-A-005.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:55:34.523303+00:00",
+      "process_instance_id": "6e7bdfd0-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:56:01.811951+00:00"
+    },
+    {
+      "doc_id": "DOC-A-006",
+      "pdf_path": "/tmp/dataset/DOC-A-006.pdf",
+      "decision_revisor": true,
+      "decision_legal": false,
+      "inicio": "2026-06-27T04:56:04.308464+00:00",
+      "process_instance_id": "803c6593-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "RECHAZADO_LEGAL_EN_CAMUNDA",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(rechazado)"
+      ],
+      "estado_onchain": "APROBADO_REVISOR",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR"
+      ],
+      "ok_trazabilidad": false,
+      "error": null,
+      "fin": "2026-06-27T04:56:23.522639+00:00"
+    },
+    {
+      "doc_id": "DOC-A-007",
+      "pdf_path": "/tmp/dataset/DOC-A-007.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:56:24.669414+00:00",
+      "process_instance_id": "8c5f1650-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:56:50.941190+00:00"
+    },
+    {
+      "doc_id": "DOC-A-008",
+      "pdf_path": "/tmp/dataset/DOC-A-008.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:56:53.591393+00:00",
+      "process_instance_id": "9d9c3c48-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:57:19.877922+00:00"
+    },
+    {
+      "doc_id": "DOC-A-009",
+      "pdf_path": "/tmp/dataset/DOC-A-009.pdf",
+      "decision_revisor": true,
+      "decision_legal": true,
+      "inicio": "2026-06-27T04:57:21.628922+00:00",
+      "process_instance_id": "ae52cd1b-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "COMPLETED",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(aprobado)",
+        "UT_ValidacionLegalYCumplimiento(aprobado)",
+        "UT_PublicarOArchivarVersionFinal"
+      ],
+      "estado_onchain": "PUBLICADO",
+      "eventos_onchain": [
+        "CREADO",
+        "APROBADO_REVISOR",
+        "APROBADO_LEGAL",
+        "PUBLICADO"
+      ],
+      "ok_trazabilidad": true,
+      "error": null,
+      "fin": "2026-06-27T04:57:47.920980+00:00"
+    },
+    {
+      "doc_id": "DOC-A-010",
+      "pdf_path": "/tmp/dataset/DOC-A-010.pdf",
+      "decision_revisor": false,
+      "decision_legal": null,
+      "inicio": "2026-06-27T04:57:49.680513+00:00",
+      "process_instance_id": "bf0b0a9e-71e4-11f1-9656-9e83cd510b43",
+      "estado_final_camunda": "RECHAZADO_REVISOR_EN_CAMUNDA",
+      "ruta_seguida": [
+        "UT_CrearDocumentoYCargar",
+        "UT_RevisarDocumento(rechazado)"
+      ],
+      "estado_onchain": "CREADO",
+      "eventos_onchain": [
+        "CREADO"
+      ],
+      "ok_trazabilidad": false,
+      "error": null,
+      "fin": "2026-06-27T04:57:57.818503+00:00"
+    }
+  ]
+}

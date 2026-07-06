@@ -1,0 +1,22 @@
+{
+    "id": "1ffc1f7d-6f8b-11f1-9656-9e83cd510b43",
+    "businessKey": null,
+    "processDefinitionId": "Process_GestionDocumental:4:c3df9f3a-6f82-11f1-9656-9e83cd510b43",
+    "processDefinitionKey": "Process_GestionDocumental",
+    "processDefinitionName": "Gesti\u00f3n documental",
+    "processDefinitionVersion": 4,
+    "startTime": "2026-06-24T05:11:15.295+0000",
+    "endTime": "2026-06-25T03:54:44.974+0000",
+    "removalTime": "2026-12-22T03:54:44.974+0000",
+    "durationInMillis": 81809679,
+    "startUserId": null,
+    "startActivityId": "StartEvent_InicioProceso",
+    "deleteReason": null,
+    "rootProcessInstanceId": "1ffc1f7d-6f8b-11f1-9656-9e83cd510b43",
+    "superProcessInstanceId": null,
+    "superCaseInstanceId": null,
+    "caseInstanceId": null,
+    "tenantId": null,
+    "state": "COMPLETED",
+    "restartedProcessInstanceId": null
+}

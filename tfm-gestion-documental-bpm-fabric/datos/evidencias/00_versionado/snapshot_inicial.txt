@@ -1,0 +1,28 @@
+=== ÁRBOL DE CARPETAS ===
+/home/azureuser/proyecto-bpm-fabric
+/home/azureuser/proyecto-bpm-fabric/.gitignore
+/home/azureuser/proyecto-bpm-fabric/README.md
+/home/azureuser/proyecto-bpm-fabric/bpmn-models
+/home/azureuser/proyecto-bpm-fabric/chaincode
+/home/azureuser/proyecto-bpm-fabric/docker
+/home/azureuser/proyecto-bpm-fabric/docker/.env
+/home/azureuser/proyecto-bpm-fabric/docker/docker-compose.yml
+/home/azureuser/proyecto-bpm-fabric/docker/fabric-network
+/home/azureuser/proyecto-bpm-fabric/evidencias
+/home/azureuser/proyecto-bpm-fabric/evidencias/00_versionado
+/home/azureuser/proyecto-bpm-fabric/evidencias/00_versionado/host_info.txt
+/home/azureuser/proyecto-bpm-fabric/evidencias/00_versionado/puertos.md
+/home/azureuser/proyecto-bpm-fabric/evidencias/00_versionado/snapshot_inicial.txt
+/home/azureuser/proyecto-bpm-fabric/resultados
+/home/azureuser/proyecto-bpm-fabric/scripts-prueba
+
+=== CONTENEDORES ACTIVOS ===
+NAMES                    IMAGE                                 STATUS
+orderer.example.com      hyperledger/fabric-orderer:latest     Up About an hour
+peer0.org2.example.com   hyperledger/fabric-peer:latest        Up About an hour
+peer0.org1.example.com   hyperledger/fabric-peer:latest        Up About an hour
+ca_orderer               hyperledger/fabric-ca:latest          Up About an hour
+ca_org1                  hyperledger/fabric-ca:latest          Up About an hour
+ca_org2                  hyperledger/fabric-ca:latest          Up About an hour
+camunda-bpm              camunda/camunda-bpm-platform:latest   Up 2 hours
+postgres-camunda         postgres:15                           Up 2 hours

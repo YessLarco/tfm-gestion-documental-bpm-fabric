@@ -1,0 +1,1 @@
+Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador" 

@@ -1,0 +1,10 @@
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:53 DOC-A-001
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:54 DOC-A-002
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:54 DOC-A-003
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:55 DOC-A-004
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:55 DOC-A-005
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:56 DOC-A-006
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:56 DOC-A-007
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:56 DOC-A-008
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:57 DOC-A-009
+drwxr-xr-x  2 azureuser azureuser 4096 Jun 27 04:57 DOC-A-010

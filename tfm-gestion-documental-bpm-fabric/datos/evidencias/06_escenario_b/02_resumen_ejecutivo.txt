@@ -1,0 +1,35 @@
+============================================================
+ESCENARIO B — Tasa de Detección de Manipulaciones (TDR)
+============================================================
+Fecha: 2026-06-28T00:11:12.681127+00:00
+Duración: 246.2 segundos
+Total de intentos:           40
+Bloqueados correctamente:    40
+TDR global:                  100.0%
+
+Regla violada        Bloqueados/Total     TDR       
+--------------------------------------------------
+SoD-1                5/5                   100.0%
+SEQ-1                5/5                   100.0%
+UNI-1                5/5                   100.0%
+ABAC                 5/5                   100.0%
+INMUTABILIDAD        5/5                   100.0%
+HASH-1               5/5                   100.0%
+ESTADO_MAQUINA       5/5                   100.0%
+SIN_ROLE             5/5                   100.0%
+
+============================================================
+INTERPRETACIÓN
+============================================================
+Todos los intentos de manipulación fueron bloqueados por el
+chaincode mediante las reglas de validación atómica:
+  - SoD-1: Separación de Funciones
+  - SEQ-1: Secuencia obligatoria del flujo
+  - UNI-1: Unicidad del identificador del documento
+  - ABAC: Control de acceso por atributo de certificado X.509
+  - INMUTABILIDAD: Solo el registrador original puede modificar
+  - HASH-1: Detección de manipulación del archivo off-chain
+  - ESTADO-MAQUINA: Transiciones de estado controladas
+  - SIN_ROLE: Rechazo de identidades sin atributo role
+
+TDR = 100% supera holgadamente la meta del documento (>= 90%).

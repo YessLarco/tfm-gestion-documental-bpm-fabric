@@ -1,0 +1,19 @@
+nohup: ignoring input
+2026/06/25 02:25:24 [main] offchain en /opt/tfm-camunda/offchain
+2026/06/25 02:25:24 [main] fabric enabled=true
+2026/06/25 02:25:24 [main] HTTP API escuchando en :3000
+2026/06/25 02:25:24 [worker] iniciando: workerId=api-gateway-worker, topics=8, fabric=true
+2026/06/25 02:25:24 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 completed
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] persistir metadata para DOC-TEST-001
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:29:41 [worker] task=1830a9e2-7046-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:29:43 [worker] task=1830a9e2-7046-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:47:10 [worker] task=897a0f18-7048-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:47:12 [worker] task=897a0f18-7048-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:54:42 [worker] task=96311af1-7049-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:54:44 [worker] task=96311af1-7049-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:54:44 [worker] task=9a576c18-7049-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:54:44 [worker] registrando cierre publicado DOC-TEST-001
+2026/06/25 03:54:44 [worker] task=9a576c18-7049-11f1-9656-9e83cd510b43 completed

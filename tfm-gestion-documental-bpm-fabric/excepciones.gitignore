@@ -1,0 +1,8 @@
+.env
+*.key
+*.pem
+wallet/
+keystore/
+organizations/
+crypto-config/
+*.tar.gz

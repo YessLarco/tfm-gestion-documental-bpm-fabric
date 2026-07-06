@@ -1,0 +1,89 @@
+version: "3.8"
+
+# ============================================================
+# Stack: Camunda (BPMS) + Base de datos off-chain (PostgreSQL) + API Gateway
+#
+# Se conecta a la red de Hyperledger Fabric mediante una red Docker EXTERNA.
+#
+# Requisito previo:
+#   1. Tener fabric-samples/test-network levantado. Por defecto crea
+#      la red Docker "fabric_test".
+#   2. Si tu red de Fabric tiene otro nombre, ajusta FABRIC_NETWORK_NAME en .env
+# ============================================================
+
+networks:
+  bpm_net:
+    driver: bridge
+  fabric_net:
+    external: true
+    name: ${FABRIC_NETWORK_NAME:-fabric_test}
+
+volumes:
+  camunda_data:
+  postgres_data:
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-offchain
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bpm_net
+
+  camunda:
+    image: camunda/camunda-bpm-platform:${CAMUNDA_IMAGE_TAG:-latest}
+    container_name: camunda-bpm
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      DB_DRIVER: org.postgresql.Driver
+      DB_URL: jdbc:postgresql://postgres:5432/${CAMUNDA_DB}
+      DB_USERNAME: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      WAIT_FOR: postgres:5432
+    ports:
+      - "8080:8080"
+    volumes:
+      - camunda_data:/camunda/data
+      # Ajusta esta ruta según la distribución de Camunda (Run, Tomcat, Spring Boot)
+      - ./bpmn-models:/camunda/configuration/data/process-engine/processes
+    networks:
+      - bpm_net
+      - fabric_net
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    restart: unless-stopped
+    depends_on:
+      - camunda
+      - postgres
+    environment:
+      PORT: 3000
+      CAMUNDA_REST_URL: http://camunda:8080/engine-rest
+      OFFCHAIN_DB_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${OFFCHAIN_DB}
+      FABRIC_CCP_PATH: ${FABRIC_CCP_PATH}
+      FABRIC_WALLET_PATH: ${FABRIC_WALLET_PATH}
+      FABRIC_CHANNEL_NAME: ${FABRIC_CHANNEL_NAME}
+      FABRIC_CHAINCODE_NAME: ${FABRIC_CHAINCODE_NAME}
+      DOC_ID_PREFIX: ${DOC_ID_PREFIX}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./fabric-network/wallet:/app/wallet
+      - ./fabric-network/connection-profile:/app/connection-profile
+    networks:
+      - bpm_net
+      - fabric_net

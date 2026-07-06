@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_GestionDocumental" targetNamespace="Camunda" exporter="Camunda Modeler" exporterVersion="5.48.0">
+<bpmn:collaboration id="Collaboration_GestionDocumental">
+<bpmn:extensionElements />
+<bpmn:participant id="Participant_GestionDocumental" name="Gestión documental" processRef="Process_GestionDocumental" />
+</bpmn:collaboration>
+<bpmn:process id="Process_GestionDocumental" name="Gestión documental" isExecutable="true" camunda:historyTimeToLive="180">
+<bpmn:laneSet id="LaneSet_GestionDocumental">
+<bpmn:lane id="Lane_SistemaBPM_APIGateway" name="Sistema BPM / API Gateway">
+<bpmn:flowNodeRef>ST_CalcularNuevoHashYRegistrarReenviado</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_CalcularHashEInvocarCrearDocumento</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>EndEvent_FinProceso</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_InvocarPublicarDocumento</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_Registrador" name="Registrador">
+<bpmn:flowNodeRef>UT_CorregirYCargarNuevaVersion</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>StartEvent_InicioProceso</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>UT_CrearDocumentoYCargar</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_Revisor" name="Revisor">
+<bpmn:flowNodeRef>UT_RevisarDocumento</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>GW_DocumentoAprobadoPorRevisor</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_LegalCompliance" name="Legal/Compliance">
+<bpmn:flowNodeRef>GW_CumpleValidacionLegal</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>UT_ValidacionLegalYCumplimiento</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_Publicador" name="Publicador">
+<bpmn:flowNodeRef>UT_PublicarOArchivarVersionFinal</bpmn:flowNodeRef>
+</bpmn:lane>
+<bpmn:lane id="Lane_Fabric_RepositorioOffChain" name="Hyperledger Fabric / Repositorio off chain">
+<bpmn:flowNodeRef>ST_ActualizarEvidenciaOnChainYVersionOffChain</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_PersistirHashDocActorEventoCreadoYGuardarOffChain</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_RechazadoLegal</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_AprobadoLegal</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_RegistrarPublicadoYHistorialVerificable</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_RechazadoRevisor</bpmn:flowNodeRef>
+<bpmn:flowNodeRef>ST_AprobadoRevisor</bpmn:flowNodeRef>
+</bpmn:lane>
+</bpmn:laneSet>
+<bpmn:sequenceFlow id="Flow_1g1haei" name="No" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="ST_RechazadoRevisor">
+<bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${documentoAprobadoPorRevisor == false}</bpmn:conditionExpression>
+</bpmn:sequenceFlow>
+<bpmn:sequenceFlow id="Flow_06o27jw" name="No" sourceRef="GW_CumpleValidacionLegal" targetRef="ST_RechazadoLegal">
+<bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${cumpleValidacionLegal == false}</bpmn:conditionExpression>
+</bpmn:sequenceFlow>
+<bpmn:sequenceFlow id="Flow_1xypccz" sourceRef="UT_CorregirYCargarNuevaVersion" targetRef="ST_CalcularNuevoHashYRegistrarReenviado" />
+<bpmn:sequenceFlow id="Flow_0khc4ha" sourceRef="StartEvent_InicioProceso" targetRef="UT_CrearDocumentoYCargar" />
+<bpmn:sequenceFlow id="Flow_0mt9l9w" sourceRef="UT_CrearDocumentoYCargar" targetRef="ST_CalcularHashEInvocarCrearDocumento" />
+<bpmn:sequenceFlow id="Flow_1yzg402" sourceRef="ST_CalcularHashEInvocarCrearDocumento" targetRef="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" />
+<bpmn:sequenceFlow id="Flow_1up42ny" sourceRef="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" targetRef="UT_RevisarDocumento" />
+<bpmn:sequenceFlow id="Flow_11jzj94" sourceRef="UT_ValidacionLegalYCumplimiento" targetRef="GW_CumpleValidacionLegal" />
+<bpmn:sequenceFlow id="Flow_15sk3ua" sourceRef="UT_RevisarDocumento" targetRef="GW_DocumentoAprobadoPorRevisor" />
+<bpmn:sequenceFlow id="Flow_1893a8o" sourceRef="ST_CalcularNuevoHashYRegistrarReenviado" targetRef="ST_ActualizarEvidenciaOnChainYVersionOffChain" />
+<bpmn:sequenceFlow id="Flow_1wt48q7" sourceRef="UT_PublicarOArchivarVersionFinal" targetRef="ST_InvocarPublicarDocumento" />
+<bpmn:sequenceFlow id="Flow_1rgvzbd" sourceRef="ST_InvocarPublicarDocumento" targetRef="ST_RegistrarPublicadoYHistorialVerificable" />
+<bpmn:sequenceFlow id="Flow_0bfodn9" sourceRef="ST_ActualizarEvidenciaOnChainYVersionOffChain" targetRef="UT_RevisarDocumento" />
+<bpmn:sequenceFlow id="Flow_0t06vbw" sourceRef="ST_RegistrarPublicadoYHistorialVerificable" targetRef="EndEvent_FinProceso" />
+<bpmn:sequenceFlow id="Flow_1u7xitz" name="SI" sourceRef="GW_CumpleValidacionLegal" targetRef="ST_AprobadoLegal" />
+<bpmn:sequenceFlow id="Flow_0bxpb7c" sourceRef="ST_AprobadoLegal" targetRef="UT_PublicarOArchivarVersionFinal" />
+<bpmn:sequenceFlow id="Flow_0nc43nh" name="SI" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="ST_AprobadoRevisor" />
+<bpmn:sequenceFlow id="Flow_0wwip0x" sourceRef="ST_AprobadoRevisor" targetRef="UT_ValidacionLegalYCumplimiento" />
+<bpmn:serviceTask id="ST_ActualizarEvidenciaOnChainYVersionOffChain" name="Actualizar evidencia on-chain y versión off-chain" camunda:type="external" camunda:topic="actualizar-evidencia-onchain-version-offchain">
+<bpmn:incoming>Flow_1893a8o</bpmn:incoming>
+<bpmn:outgoing>Flow_0bfodn9</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:serviceTask id="ST_CalcularNuevoHashYRegistrarReenviado" name="Calcular nuevo hash y registrar REENVIADO" camunda:type="external" camunda:topic="calcular-nuevo-hash-registrar-reenviado">
+<bpmn:incoming>Flow_1xypccz</bpmn:incoming>
+<bpmn:outgoing>Flow_1893a8o</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:userTask id="UT_CorregirYCargarNuevaVersion" name="Corregir y cargar nueva versión">
+<bpmn:incoming>Flow_0syke14</bpmn:incoming>
+<bpmn:incoming>Flow_1di00n3</bpmn:incoming>
+<bpmn:outgoing>Flow_1xypccz</bpmn:outgoing>
+</bpmn:userTask>
+<bpmn:startEvent id="StartEvent_InicioProceso" name="Inicio">
+<bpmn:outgoing>Flow_0khc4ha</bpmn:outgoing>
+</bpmn:startEvent>
+<bpmn:userTask id="UT_CrearDocumentoYCargar" name="Crear documento y cargar">
+<bpmn:incoming>Flow_0khc4ha</bpmn:incoming>
+<bpmn:outgoing>Flow_0mt9l9w</bpmn:outgoing>
+</bpmn:userTask>
+<bpmn:serviceTask id="ST_CalcularHashEInvocarCrearDocumento" name="Calcular hash e invocar crearDocumento()" camunda:type="external" camunda:topic="calcular-hash-crear-documento">
+<bpmn:incoming>Flow_0mt9l9w</bpmn:incoming>
+<bpmn:outgoing>Flow_1yzg402</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:serviceTask id="ST_PersistirHashDocActorEventoCreadoYGuardarOffChain" name="Persistir hash, doc_id, actor y evento CREADO; guardar archivo off-chain" camunda:type="external" camunda:topic="persistir-hash-doc-guardar-offchain">
+<bpmn:incoming>Flow_1yzg402</bpmn:incoming>
+<bpmn:outgoing>Flow_1up42ny</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:userTask id="UT_RevisarDocumento" name="Revisar documento">
+<bpmn:incoming>Flow_1up42ny</bpmn:incoming>
+<bpmn:incoming>Flow_0bfodn9</bpmn:incoming>
+<bpmn:outgoing>Flow_15sk3ua</bpmn:outgoing>
+</bpmn:userTask>
+<bpmn:sequenceFlow id="Flow_0syke14" sourceRef="ST_RechazadoRevisor" targetRef="UT_CorregirYCargarNuevaVersion" />
+<bpmn:serviceTask id="ST_RechazadoLegal" name="Sincronizar decisión legal on-chain (RechazadoLegal)" camunda:type="external" camunda:topic="registrar-decision-legal">
+<bpmn:incoming>Flow_06o27jw</bpmn:incoming>
+<bpmn:outgoing>Flow_1di00n3</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:sequenceFlow id="Flow_1di00n3" sourceRef="ST_RechazadoLegal" targetRef="UT_CorregirYCargarNuevaVersion" />
+<bpmn:serviceTask id="ST_AprobadoLegal" name="Sincronizar decisión legal on-chain (AprobadoLegal)" camunda:type="external" camunda:topic="registrar-decision-legal">
+<bpmn:incoming>Flow_1u7xitz</bpmn:incoming>
+<bpmn:outgoing>Flow_0bxpb7c</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:exclusiveGateway id="GW_CumpleValidacionLegal" name="¿Cumple validación legal/compliance?">
+<bpmn:incoming>Flow_11jzj94</bpmn:incoming>
+<bpmn:outgoing>Flow_06o27jw</bpmn:outgoing>
+<bpmn:outgoing>Flow_1u7xitz</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+<bpmn:serviceTask id="ST_RegistrarPublicadoYHistorialVerificable" name="Registrar PUBLICADO e historial verificable" camunda:type="external" camunda:topic="registrar-publicado-historial-verificable">
+<bpmn:incoming>Flow_1rgvzbd</bpmn:incoming>
+<bpmn:outgoing>Flow_0t06vbw</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:endEvent id="EndEvent_FinProceso" name="Fin">
+<bpmn:incoming>Flow_0t06vbw</bpmn:incoming>
+</bpmn:endEvent>
+<bpmn:serviceTask id="ST_InvocarPublicarDocumento" name="Invocar publicarDocumento()" camunda:type="external" camunda:topic="invocar-publicar-documento">
+<bpmn:incoming>Flow_1wt48q7</bpmn:incoming>
+<bpmn:outgoing>Flow_1rgvzbd</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:userTask id="UT_PublicarOArchivarVersionFinal" name="Publicar o archivar versión final">
+<bpmn:incoming>Flow_0bxpb7c</bpmn:incoming>
+<bpmn:outgoing>Flow_1wt48q7</bpmn:outgoing>
+</bpmn:userTask>
+<bpmn:serviceTask id="ST_RechazadoRevisor" name="Sincronizar decisión del revisor on-chain (RechazadoRevisión)" camunda:type="external" camunda:topic="registrar-decision-revisor">
+<bpmn:incoming>Flow_1g1haei</bpmn:incoming>
+<bpmn:outgoing>Flow_0syke14</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:userTask id="UT_ValidacionLegalYCumplimiento" name="Validación legal y de cumplimiento">
+<bpmn:incoming>Flow_0wwip0x</bpmn:incoming>
+<bpmn:outgoing>Flow_11jzj94</bpmn:outgoing>
+</bpmn:userTask>
+<bpmn:serviceTask id="ST_AprobadoRevisor" name="Sincronizar decisión del revisor on-chain (AprobadoRevisión)" camunda:type="external" camunda:topic="registrar-decision-revisor">
+<bpmn:incoming>Flow_0nc43nh</bpmn:incoming>
+<bpmn:outgoing>Flow_0wwip0x</bpmn:outgoing>
+</bpmn:serviceTask>
+<bpmn:exclusiveGateway id="GW_DocumentoAprobadoPorRevisor" name="¿Documento aprobado por revisor?">
+<bpmn:incoming>Flow_15sk3ua</bpmn:incoming>
+<bpmn:outgoing>Flow_1g1haei</bpmn:outgoing>
+<bpmn:outgoing>Flow_0nc43nh</bpmn:outgoing>
+</bpmn:exclusiveGateway>
+</bpmn:process>
+</bpmn:definitions>

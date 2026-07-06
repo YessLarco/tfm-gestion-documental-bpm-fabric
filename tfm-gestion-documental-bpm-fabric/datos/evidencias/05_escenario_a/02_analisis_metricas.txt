@@ -1,0 +1,35 @@
+============================================================
+ESCENARIO A — Análisis de Completitud de Trazabilidad
+============================================================
+Total de instancias ejecutadas: 10
+Errores técnicos: 0
+
+--- Camino feliz (aprobado por todos) ---
+  Documentos: 8
+  Trazabilidad OK: 8
+  CT camino feliz: 100.00%
+
+--- Rechazos en revisor ---
+  Documentos: 1
+  Trazabilidad OK: 0
+  CT rechazo revisor: 0.00%
+
+--- Rechazos en legal ---
+  Documentos: 1
+  Trazabilidad OK: 0
+  CT rechazo legal: 0.00%
+
+============================================================
+MÉTRICAS PARA EL TFM
+============================================================
+CT global (todos los caminos):   80.00%
+CT camino feliz (publicación):   100.00%
+
+============================================================
+HALLAZGO IDENTIFICADO
+============================================================
+Los rechazos (revisor y legal) no generan eventos on-chain
+en el diseño BPMN actual: el gateway exclusivo dirige la rama
+'No' directamente a UT_CorregirYCargarNuevaVersion, sin pasar
+por una Service Task de sincronización. Esta limitación está
+documentada como hallazgo para iteración futura.

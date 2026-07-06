@@ -1,0 +1,104 @@
+============================================================
+ATAQUE: ABAC
+============================================================
+  doc_id:       DOC-B-ABAC-8X62F0CW
+  descripcion:  Revisor intenta hacer AprobarLegal
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=legal, el invocador tiene role=revisor"
+
+  doc_id:       DOC-B-ABAC-EL33SHNZ
+  descripcion:  Revisor intenta hacer AprobarLegal
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=legal, el invocador tiene role=revisor"
+
+============================================================
+ATAQUE: ESTADO_MAQUINA
+============================================================
+  doc_id:       DOC-B-ESTADO-KY4AI1CC
+  descripcion:  Reenviar documento en estado CREADO (no rechazado)
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"no se puede reenviar: estado actual CREADO"
+
+  doc_id:       DOC-B-ESTADO-Y2VVRBVN
+  descripcion:  Reenviar documento en estado CREADO (no rechazado)
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"no se puede reenviar: estado actual CREADO"
+
+============================================================
+ATAQUE: HASH-1
+============================================================
+  doc_id:       DOC-B-HASH-I31WR10Q
+  descripcion:  Archivo off-chain alterado, VerificarIntegridad debe detectar
+  bloqueado:    True
+  mensaje:      {"doc_id":"DOC-B-HASH-I31WR10Q","hash_on_chain":"d0bd23415af84b9b2a41dbea07b94defd2ba6f3c6e73f2a9d7bcdadc9ba96bef","hash_provisto":"23ecb3ae485c2a43d69dd4a91eb0bb5da0d3132878f67b342b4755f6c2e0e4b2","coincide":false,"estado_actual":"CREADO","version_o
+
+  doc_id:       DOC-B-HASH-2XK64LV7
+  descripcion:  Archivo off-chain alterado, VerificarIntegridad debe detectar
+  bloqueado:    True
+  mensaje:      {"doc_id":"DOC-B-HASH-2XK64LV7","hash_on_chain":"13e99174852c2a33fb876fcd08ef6789a9892d662b012ef5016d85a0fa9e1bf2","hash_provisto":"75218bc729336025066b88dfbe963ef11e356d138d1442909ed339246651cd77","coincide":false,"estado_actual":"CREADO","version_o
+
+============================================================
+ATAQUE: INMUTABILIDAD
+============================================================
+  doc_id:       DOC-B-INMUT-IEPIOX9R
+  descripcion:  Revisor intenta ActualizarEvidencia (no es el registrador original)
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor"
+
+  doc_id:       DOC-B-INMUT-KDEI4RD1
+  descripcion:  Revisor intenta ActualizarEvidencia (no es el registrador original)
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor"
+
+============================================================
+ATAQUE: SEQ-1
+============================================================
+  doc_id:       DOC-B-SEQ-HF307TGB
+  descripcion:  Publicar sin aprobación legal
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)"
+
+  doc_id:       DOC-B-SEQ-GYY1PWIG
+  descripcion:  Publicar sin aprobación legal
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)"
+
+============================================================
+ATAQUE: SIN_ROLE
+============================================================
+  doc_id:       DOC-B-NOROLE-2PQKITWM
+  descripcion:  User1 sin atributo role intenta CrearDocumento
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"el certificado del invocador no contiene atributo 'role'"
+
+  doc_id:       DOC-B-NOROLE-DD8YEUPZ
+  descripcion:  User1 sin atributo role intenta CrearDocumento
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"el certificado del invocador no contiene atributo 'role'"
+
+============================================================
+ATAQUE: SoD-1
+============================================================
+  doc_id:       DOC-B-SOD-LP5H62X1
+  descripcion:  Registrador intenta aprobar revisión
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador"
+
+  doc_id:       DOC-B-SOD-RXM5TN11
+  descripcion:  Registrador intenta aprobar revisión
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador"
+
+============================================================
+ATAQUE: UNI-1
+============================================================
+  doc_id:       DOC-B-UNI-YE1YHGM1
+  descripcion:  Duplicar doc_id
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"UNI-1 violado: el documento DOC-B-UNI-YE1YHGM1 ya existe"
+
+  doc_id:       DOC-B-UNI-AR8SQ7OG
+  descripcion:  Duplicar doc_id
+  bloqueado:    True
+  mensaje:      Error: endorsement failure during invoke. response: status:500 message:"UNI-1 violado: el documento DOC-B-UNI-AR8SQ7OG ya existe"
+

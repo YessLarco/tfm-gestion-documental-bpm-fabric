@@ -1,0 +1,147 @@
+nohup: ignoring input
+2026/06/25 02:25:24 [main] offchain en /opt/tfm-camunda/offchain
+2026/06/25 02:25:24 [main] fabric enabled=true
+2026/06/25 02:25:24 [main] HTTP API escuchando en :3000
+2026/06/25 02:25:24 [worker] iniciando: workerId=api-gateway-worker, topics=8, fabric=true
+2026/06/25 02:25:24 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] task=711f7dcf-6fec-11f1-9656-9e83cd510b43 completed
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 02:25:26 [worker] persistir metadata para DOC-TEST-001
+2026/06/25 02:25:26 [worker] task=20ad4c9e-703d-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:29:41 [worker] task=1830a9e2-7046-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:29:43 [worker] task=1830a9e2-7046-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:47:10 [worker] task=897a0f18-7048-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:47:12 [worker] task=897a0f18-7048-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:54:42 [worker] task=96311af1-7049-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:54:44 [worker] task=96311af1-7049-11f1-9656-9e83cd510b43 completed
+2026/06/25 03:54:44 [worker] task=9a576c18-7049-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=1ffc1f7d-6f8b-11f1-9656-9e83cd510b43
+2026/06/25 03:54:44 [worker] registrando cierre publicado DOC-TEST-001
+2026/06/25 03:54:44 [worker] task=9a576c18-7049-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:53:41 [worker] task=290a77f2-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:53:43 [worker] task=290a77f2-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:53:43 [worker] task=2c803dd1-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:53:43 [worker] persistir metadata para DOC-A-001
+2026/06/27 04:53:43 [worker] task=2c803dd1-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:53:48 [worker] task=2ca66381-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:53:50 [worker] task=2ca66381-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:53:55 [worker] task=30dbf6ef-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:53:58 [worker] task=30dbf6ef-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:03 [worker] task=3510c708-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:05 [worker] task=3510c708-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:05 [worker] task=3938ecef-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=28e42b34-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:05 [worker] registrando cierre publicado DOC-A-001
+2026/06/27 04:54:05 [worker] task=3938ecef-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:10 [worker] task=3bf12f35-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:12 [worker] task=3bf12f35-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:12 [worker] task=3d766fb4-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:12 [worker] persistir metadata para DOC-A-002
+2026/06/27 04:54:12 [worker] task=3d766fb4-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:17 [worker] task=3dbfd4d4-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:19 [worker] task=3dbfd4d4-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:24 [worker] task=41f4f212-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:26 [worker] task=41f4f212-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:31 [worker] task=4629740b-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:33 [worker] task=4629740b-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:33 [worker] task=4a292a62-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=3bee9717-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:33 [worker] registrando cierre publicado DOC-A-002
+2026/06/27 04:54:33 [worker] task=4a292a62-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:38 [worker] task=4d0e4908-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:40 [worker] task=4d0e4908-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:40 [worker] task=4e69e177-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:40 [worker] persistir metadata para DOC-A-003
+2026/06/27 04:54:40 [worker] task=4e69e177-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:45 [worker] task=4eddb1f7-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:47 [worker] task=4eddb1f7-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:52 [worker] task=531233f5-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:54:54 [worker] task=531233f5-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:54:59 [worker] task=57468ede-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:02 [worker] task=57468ede-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:02 [worker] task=5b259dd5-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=4d0b89da-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:02 [worker] registrando cierre publicado DOC-A-003
+2026/06/27 04:55:02 [worker] task=5b259dd5-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:07 [worker] task=5e24d42b-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:09 [worker] task=5e24d42b-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:09 [worker] task=5f64802a-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:09 [worker] persistir metadata para DOC-A-004
+2026/06/27 04:55:09 [worker] task=5f64802a-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:14 [worker] task=5ff3eefa-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:16 [worker] task=5ff3eefa-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:21 [worker] task=64295b58-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:23 [worker] task=64295b58-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:28 [worker] task=685e7991-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:30 [worker] task=685e7991-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:30 [worker] task=6c1518f8-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=5e21c6dd-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:30 [worker] registrando cierre publicado DOC-A-004
+2026/06/27 04:55:30 [worker] task=6c1518f8-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:35 [worker] task=6e7e77ee-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:37 [worker] task=6e7e77ee-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:37 [worker] task=7051d86d-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:37 [worker] persistir metadata para DOC-A-005
+2026/06/27 04:55:37 [worker] task=7051d86d-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:42 [worker] task=70e69e6d-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:44 [worker] task=70e69e6d-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:49 [worker] task=751b206b-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:51 [worker] task=751b206b-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:56 [worker] task=794f2c34-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:58 [worker] task=794f2c34-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:55:58 [worker] task=7d02be5b-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=6e7bdfd0-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:55:58 [worker] registrando cierre publicado DOC-A-005
+2026/06/27 04:55:58 [worker] task=7d02be5b-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:08 [worker] task=803f4bd1-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=803c6593-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:11 [worker] task=803f4bd1-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:11 [worker] task=843f7760-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=803c6593-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:11 [worker] persistir metadata para DOC-A-006
+2026/06/27 04:56:11 [worker] task=843f7760-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:16 [worker] task=8473f4f0-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=803c6593-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:18 [worker] task=8473f4f0-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:23 [worker] task=88a828ce-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=803c6593-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:25 [worker] task=88a828ce-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:25 [worker] task=8c61875e-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:27 [worker] task=8c61875e-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:27 [worker] task=8df594f2-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:27 [worker] persistir metadata para DOC-A-007
+2026/06/27 04:56:27 [worker] task=8df594f2-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:32 [worker] task=8e3005f2-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:34 [worker] task=8e3005f2-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:39 [worker] task=926439d0-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:41 [worker] task=926439d0-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:46 [worker] task=969894b9-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:48 [worker] task=969894b9-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:48 [worker] task=9aa606b0-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=8c5f1650-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:48 [worker] registrando cierre publicado DOC-A-007
+2026/06/27 04:56:48 [worker] task=9aa606b0-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:53 [worker] task=9d9efb76-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:55 [worker] task=9d9efb76-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:56:55 [worker] task=9ee4e905-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:56:55 [worker] persistir metadata para DOC-A-008
+2026/06/27 04:56:55 [worker] task=9ee4e905-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:00 [worker] task=9f6dc825-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:02 [worker] task=9f6dc825-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:07 [worker] task=a3a29843-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:09 [worker] task=a3a29843-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:14 [worker] task=a7d7b67c-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:17 [worker] task=a7d7b67c-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:17 [worker] task=ab972f83-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=9d9c3c48-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:17 [worker] registrando cierre publicado DOC-A-008
+2026/06/27 04:57:17 [worker] task=ab972f83-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:22 [worker] task=ae558b49-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:24 [worker] task=ae558b49-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:24 [worker] task=afd43c18-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:24 [worker] persistir metadata para DOC-A-009
+2026/06/27 04:57:24 [worker] task=afd43c18-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:29 [worker] task=b02409d8-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:31 [worker] task=b02409d8-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:36 [worker] task=b4588bd6-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-legal instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:38 [worker] task=b4588bd6-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:43 [worker] task=b88e6d5f-71e4-11f1-9656-9e83cd510b43 topic=invocar-publicar-documento instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:45 [worker] task=b88e6d5f-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:45 [worker] task=bc81c7a6-71e4-11f1-9656-9e83cd510b43 topic=registrar-publicado-historial-verificable instance=ae52cd1b-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:45 [worker] registrando cierre publicado DOC-A-009
+2026/06/27 04:57:45 [worker] task=bc81c7a6-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:50 [worker] task=bf0da2bc-71e4-11f1-9656-9e83cd510b43 topic=calcular-hash-crear-documento instance=bf0b0a9e-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:52 [worker] task=bf0da2bc-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:52 [worker] task=c0bd4e9b-71e4-11f1-9656-9e83cd510b43 topic=persistir-hash-doc-guardar-offchain instance=bf0b0a9e-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:52 [worker] persistir metadata para DOC-A-010
+2026/06/27 04:57:52 [worker] task=c0bd4e9b-71e4-11f1-9656-9e83cd510b43 completed
+2026/06/27 04:57:57 [worker] task=c0dd32bb-71e4-11f1-9656-9e83cd510b43 topic=registrar-decision-revisor instance=bf0b0a9e-71e4-11f1-9656-9e83cd510b43
+2026/06/27 04:57:59 [worker] task=c0dd32bb-71e4-11f1-9656-9e83cd510b43 completed

@@ -1,0 +1,379 @@
+=== DOC-A-001 ===
+{
+    "doc_id": "DOC-A-001",
+    "document_hash": "a246a0ae34f7d67a865faa4338b2a44712762b0e096100e8b8cbfb5470763991",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "a246a0ae34f7d67a865faa4338b2a44712762b0e096100e8b8cbfb5470763991",
+            "version": 1,
+            "timestamp": "2026-06-27T04:53:41Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:53:48Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:53:55Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:03Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-002 ===
+{
+    "doc_id": "DOC-A-002",
+    "document_hash": "8d210104848c21ca977d17ed4bfc753ba7d639feb49f7b8da1c42f8714e342ec",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "8d210104848c21ca977d17ed4bfc753ba7d639feb49f7b8da1c42f8714e342ec",
+            "version": 1,
+            "timestamp": "2026-06-27T04:54:10Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:17Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:24Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:31Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-003 ===
+{
+    "doc_id": "DOC-A-003",
+    "document_hash": "5ca0f5988a5a3e1fbf7d3b44dc46ab189e1e6e11a3a29e30e66d159534a8f218",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "5ca0f5988a5a3e1fbf7d3b44dc46ab189e1e6e11a3a29e30e66d159534a8f218",
+            "version": 1,
+            "timestamp": "2026-06-27T04:54:38Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:45Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:52Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:54:59Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-004 ===
+{
+    "doc_id": "DOC-A-004",
+    "document_hash": "74731b46380094e3b15daa7ea6b8430b921606febe0f67a52b0b42e995d73eb4",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "74731b46380094e3b15daa7ea6b8430b921606febe0f67a52b0b42e995d73eb4",
+            "version": 1,
+            "timestamp": "2026-06-27T04:55:07Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:14Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:21Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:28Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-005 ===
+{
+    "doc_id": "DOC-A-005",
+    "document_hash": "64bd789a0b769a8caaa8e78098c45cbd618a756ebbb73d2769ff1aa0279cd9c3",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "64bd789a0b769a8caaa8e78098c45cbd618a756ebbb73d2769ff1aa0279cd9c3",
+            "version": 1,
+            "timestamp": "2026-06-27T04:55:35Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:42Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:49Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:55:56Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-006 ===
+{
+    "doc_id": "DOC-A-006",
+    "document_hash": "1b9800038fe3443fad0b5dbe4ce760061fbe65da973f686cd9937e410148c504",
+    "version": 1,
+    "estado_actual": "RECHAZADO_LEGAL",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "",
+    "publicador_id": "",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "1b9800038fe3443fad0b5dbe4ce760061fbe65da973f686cd9937e410148c504",
+            "version": 1,
+            "timestamp": "2026-06-27T04:56:08Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:56:16Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "RECHAZADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:56:23Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        }
+    ]
+}
+
+=== DOC-A-007 ===
+{
+    "doc_id": "DOC-A-007",
+    "document_hash": "be62a8a2165d878d19392310a2a571a2015494c8049749cd6bb55193107dfe94",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "be62a8a2165d878d19392310a2a571a2015494c8049749cd6bb55193107dfe94",
+            "version": 1,
+            "timestamp": "2026-06-27T04:56:25Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "APROBADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:56:32Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        },
+        {
+            "event_type": "APROBADO_LEGAL",
+            "actor_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "legal",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:56:39Z",
+            "comentario": "Decisi\u00f3n escenario A (legal)"
+        },
+        {
+            "event_type": "PUBLICADO",
+            "actor_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "publicador",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:56:46Z",
+            "comentario": ""
+        }
+    ]
+}
+
+=== DOC-A-000 ===
+Expecting value: line 1 column 1 (char 0)
+
+=== DOC-A-000 ===
+Expecting value: line 1 column 1 (char 0)
+
+=== DOC-A-010 ===
+{
+    "doc_id": "DOC-A-010",
+    "document_hash": "9236fcd40fcbeaffce6adb3c890704e3f21051e76c59027f67f7e73a2e89ae7e",
+    "version": 1,
+    "estado_actual": "RECHAZADO_REVISOR",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "",
+    "legal_id": "",
+    "publicador_id": "",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "9236fcd40fcbeaffce6adb3c890704e3f21051e76c59027f67f7e73a2e89ae7e",
+            "version": 1,
+            "timestamp": "2026-06-27T04:57:50Z",
+            "comentario": ""
+        },
+        {
+            "event_type": "RECHAZADO_REVISOR",
+            "actor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+            "actor_role": "revisor",
+            "hash": "",
+            "version": 0,
+            "timestamp": "2026-06-27T04:57:57Z",
+            "comentario": "Decisi\u00f3n escenario A"
+        }
+    ]
+}
+

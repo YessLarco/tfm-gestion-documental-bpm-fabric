@@ -1,0 +1,1 @@
+Error: endorsement failure during invoke. response: status:500 message:"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: APROBADO_REVISOR)" 

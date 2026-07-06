@@ -1,0 +1,411 @@
+{
+  "fecha": "2026-06-28T00:11:12.681127+00:00",
+  "duracion_segundos": 246.2,
+  "total_intentos": 40,
+  "bloqueados_correctamente": 40,
+  "TDR_porcentaje": 100.0,
+  "por_tipo": {
+    "SoD-1": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "SEQ-1": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "UNI-1": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "ABAC": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "INMUTABILIDAD": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "HASH-1": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "ESTADO_MAQUINA": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    },
+    "SIN_ROLE": {
+      "total": 5,
+      "bloqueados": 5,
+      "tdr": 100.0
+    }
+  },
+  "detalle": [
+    {
+      "tipo": "SoD-1",
+      "descripcion": "Registrador intenta aprobar revisión",
+      "doc_id": "DOC-B-SOD-LP5H62X1",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:07:11.629551+00:00"
+    },
+    {
+      "tipo": "SoD-1",
+      "descripcion": "Registrador intenta aprobar revisión",
+      "doc_id": "DOC-B-SOD-RXM5TN11",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:07:17.782112+00:00"
+    },
+    {
+      "tipo": "SoD-1",
+      "descripcion": "Registrador intenta aprobar revisión",
+      "doc_id": "DOC-B-SOD-G6R8A9AK",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:07:23.937423+00:00"
+    },
+    {
+      "tipo": "SoD-1",
+      "descripcion": "Registrador intenta aprobar revisión",
+      "doc_id": "DOC-B-SOD-4PDIWL19",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:07:30.089338+00:00"
+    },
+    {
+      "tipo": "SoD-1",
+      "descripcion": "Registrador intenta aprobar revisión",
+      "doc_id": "DOC-B-SOD-EZTP9Y20",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=revisor, el invocador tiene role=registrador\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:07:36.250374+00:00"
+    },
+    {
+      "tipo": "SEQ-1",
+      "descripcion": "Publicar sin aprobación legal",
+      "doc_id": "DOC-B-SEQ-HF307TGB",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:07:42.408287+00:00"
+    },
+    {
+      "tipo": "SEQ-1",
+      "descripcion": "Publicar sin aprobación legal",
+      "doc_id": "DOC-B-SEQ-GYY1PWIG",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:07:48.560437+00:00"
+    },
+    {
+      "tipo": "SEQ-1",
+      "descripcion": "Publicar sin aprobación legal",
+      "doc_id": "DOC-B-SEQ-0I5XVWSS",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:07:54.718563+00:00"
+    },
+    {
+      "tipo": "SEQ-1",
+      "descripcion": "Publicar sin aprobación legal",
+      "doc_id": "DOC-B-SEQ-6WCORWF0",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:08:00.878835+00:00"
+    },
+    {
+      "tipo": "SEQ-1",
+      "descripcion": "Publicar sin aprobación legal",
+      "doc_id": "DOC-B-SEQ-I7J0H4GJ",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"SEQ-1 violado: no se puede publicar sin estado APROBADO_LEGAL (estado actual: CREADO)\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:08:07.038894+00:00"
+    },
+    {
+      "tipo": "UNI-1",
+      "descripcion": "Duplicar doc_id",
+      "doc_id": "DOC-B-UNI-YE1YHGM1",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"UNI-1 violado: el documento DOC-B-UNI-YE1YHGM1 ya existe\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:08:13.191888+00:00"
+    },
+    {
+      "tipo": "UNI-1",
+      "descripcion": "Duplicar doc_id",
+      "doc_id": "DOC-B-UNI-AR8SQ7OG",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"UNI-1 violado: el documento DOC-B-UNI-AR8SQ7OG ya existe\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:08:19.346840+00:00"
+    },
+    {
+      "tipo": "UNI-1",
+      "descripcion": "Duplicar doc_id",
+      "doc_id": "DOC-B-UNI-IW64XB7B",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"UNI-1 violado: el documento DOC-B-UNI-IW64XB7B ya existe\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:08:25.496987+00:00"
+    },
+    {
+      "tipo": "UNI-1",
+      "descripcion": "Duplicar doc_id",
+      "doc_id": "DOC-B-UNI-PN39BNLZ",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"UNI-1 violado: el documento DOC-B-UNI-PN39BNLZ ya existe\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:08:31.651946+00:00"
+    },
+    {
+      "tipo": "UNI-1",
+      "descripcion": "Duplicar doc_id",
+      "doc_id": "DOC-B-UNI-0WE44QC2",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"UNI-1 violado: el documento DOC-B-UNI-0WE44QC2 ya existe\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:08:37.809320+00:00"
+    },
+    {
+      "tipo": "ABAC",
+      "descripcion": "Revisor intenta hacer AprobarLegal",
+      "doc_id": "DOC-B-ABAC-8X62F0CW",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=legal, el invocador tiene role=revisor\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:08:49.040087+00:00"
+    },
+    {
+      "tipo": "ABAC",
+      "descripcion": "Revisor intenta hacer AprobarLegal",
+      "doc_id": "DOC-B-ABAC-EL33SHNZ",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=legal, el invocador tiene role=revisor\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:09:00.287020+00:00"
+    },
+    {
+      "tipo": "ABAC",
+      "descripcion": "Revisor intenta hacer AprobarLegal",
+      "doc_id": "DOC-B-ABAC-HCT4SL9K",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=legal, el invocador tiene role=revisor\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:09:11.522501+00:00"
+    },
+    {
+      "tipo": "ABAC",
+      "descripcion": "Revisor intenta hacer AprobarLegal",
+      "doc_id": "DOC-B-ABAC-57JXBEA4",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=legal, el invocador tiene role=revisor\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:09:22.759482+00:00"
+    },
+    {
+      "tipo": "ABAC",
+      "descripcion": "Revisor intenta hacer AprobarLegal",
+      "doc_id": "DOC-B-ABAC-LL1AZQYH",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=legal, el invocador tiene role=revisor\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:09:34.003658+00:00"
+    },
+    {
+      "tipo": "INMUTABILIDAD",
+      "descripcion": "Revisor intenta ActualizarEvidencia (no es el registrador original)",
+      "doc_id": "DOC-B-INMUT-IEPIOX9R",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:09:40.165458+00:00"
+    },
+    {
+      "tipo": "INMUTABILIDAD",
+      "descripcion": "Revisor intenta ActualizarEvidencia (no es el registrador original)",
+      "doc_id": "DOC-B-INMUT-KDEI4RD1",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:09:46.321001+00:00"
+    },
+    {
+      "tipo": "INMUTABILIDAD",
+      "descripcion": "Revisor intenta ActualizarEvidencia (no es el registrador original)",
+      "doc_id": "DOC-B-INMUT-CYNKD9U6",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:09:52.473393+00:00"
+    },
+    {
+      "tipo": "INMUTABILIDAD",
+      "descripcion": "Revisor intenta ActualizarEvidencia (no es el registrador original)",
+      "doc_id": "DOC-B-INMUT-ONA0152I",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:09:58.626929+00:00"
+    },
+    {
+      "tipo": "INMUTABILIDAD",
+      "descripcion": "Revisor intenta ActualizarEvidencia (no es el registrador original)",
+      "doc_id": "DOC-B-INMUT-OU4DQAC1",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"acceso denegado: se requiere role=registrador, el invocador tiene role=revisor\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:10:04.777137+00:00"
+    },
+    {
+      "tipo": "HASH-1",
+      "descripcion": "Archivo off-chain alterado, VerificarIntegridad debe detectar",
+      "doc_id": "DOC-B-HASH-I31WR10Q",
+      "bloqueado": true,
+      "mensaje_chaincode": "{\"doc_id\":\"DOC-B-HASH-I31WR10Q\",\"hash_on_chain\":\"d0bd23415af84b9b2a41dbea07b94defd2ba6f3c6e73f2a9d7bcdadc9ba96bef\",\"hash_provisto\":\"23ecb3ae485c2a43d69dd4a91eb0bb5da0d3132878f67b342b4755f6c2e0e4b2\",\"coincide\":false,\"estado_actual\":\"CREADO\",\"version_on_chain\":1}",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:10:10.927490+00:00"
+    },
+    {
+      "tipo": "HASH-1",
+      "descripcion": "Archivo off-chain alterado, VerificarIntegridad debe detectar",
+      "doc_id": "DOC-B-HASH-2XK64LV7",
+      "bloqueado": true,
+      "mensaje_chaincode": "{\"doc_id\":\"DOC-B-HASH-2XK64LV7\",\"hash_on_chain\":\"13e99174852c2a33fb876fcd08ef6789a9892d662b012ef5016d85a0fa9e1bf2\",\"hash_provisto\":\"75218bc729336025066b88dfbe963ef11e356d138d1442909ed339246651cd77\",\"coincide\":false,\"estado_actual\":\"CREADO\",\"version_on_chain\":1}",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:10:17.076899+00:00"
+    },
+    {
+      "tipo": "HASH-1",
+      "descripcion": "Archivo off-chain alterado, VerificarIntegridad debe detectar",
+      "doc_id": "DOC-B-HASH-F1ZVNS5D",
+      "bloqueado": true,
+      "mensaje_chaincode": "{\"doc_id\":\"DOC-B-HASH-F1ZVNS5D\",\"hash_on_chain\":\"7834c74ceeb2673ed9fb0fa063eeb52f6b075e62d08cd4c570ef1e0a606a6b22\",\"hash_provisto\":\"0ec4078588f1b891b7bb4697067cae9a3ca0818f0c209d51d53afce2c60973b3\",\"coincide\":false,\"estado_actual\":\"CREADO\",\"version_on_chain\":1}",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:10:23.227302+00:00"
+    },
+    {
+      "tipo": "HASH-1",
+      "descripcion": "Archivo off-chain alterado, VerificarIntegridad debe detectar",
+      "doc_id": "DOC-B-HASH-XV8SSWJB",
+      "bloqueado": true,
+      "mensaje_chaincode": "{\"doc_id\":\"DOC-B-HASH-XV8SSWJB\",\"hash_on_chain\":\"6ee3cad7ba22d36f3077f0d2f5ee81e430adef4b40974dcd36dadae10a663889\",\"hash_provisto\":\"962b2c3d68adece4008f918f3d1bd0062c4c444c17205fde3791c9a4c1e784a2\",\"coincide\":false,\"estado_actual\":\"CREADO\",\"version_on_chain\":1}",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:10:29.374041+00:00"
+    },
+    {
+      "tipo": "HASH-1",
+      "descripcion": "Archivo off-chain alterado, VerificarIntegridad debe detectar",
+      "doc_id": "DOC-B-HASH-RDSK2TVM",
+      "bloqueado": true,
+      "mensaje_chaincode": "{\"doc_id\":\"DOC-B-HASH-RDSK2TVM\",\"hash_on_chain\":\"f87c44e1bf31be1efcedc1030b347d7b07eef0072d977c64131b2dc68873a809\",\"hash_provisto\":\"00a9e739854f8665e2ac2c0a74b7ce101afa235760510a549f0ee89ffb9fd5bf\",\"coincide\":false,\"estado_actual\":\"CREADO\",\"version_on_chain\":1}",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:10:35.519864+00:00"
+    },
+    {
+      "tipo": "ESTADO_MAQUINA",
+      "descripcion": "Reenviar documento en estado CREADO (no rechazado)",
+      "doc_id": "DOC-B-ESTADO-KY4AI1CC",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"no se puede reenviar: estado actual CREADO\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:10:41.679847+00:00"
+    },
+    {
+      "tipo": "ESTADO_MAQUINA",
+      "descripcion": "Reenviar documento en estado CREADO (no rechazado)",
+      "doc_id": "DOC-B-ESTADO-Y2VVRBVN",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"no se puede reenviar: estado actual CREADO\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:10:47.831209+00:00"
+    },
+    {
+      "tipo": "ESTADO_MAQUINA",
+      "descripcion": "Reenviar documento en estado CREADO (no rechazado)",
+      "doc_id": "DOC-B-ESTADO-3LEM6LXJ",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"no se puede reenviar: estado actual CREADO\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:10:53.987468+00:00"
+    },
+    {
+      "tipo": "ESTADO_MAQUINA",
+      "descripcion": "Reenviar documento en estado CREADO (no rechazado)",
+      "doc_id": "DOC-B-ESTADO-7SZ5GK5M",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"no se puede reenviar: estado actual CREADO\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:11:00.144641+00:00"
+    },
+    {
+      "tipo": "ESTADO_MAQUINA",
+      "descripcion": "Reenviar documento en estado CREADO (no rechazado)",
+      "doc_id": "DOC-B-ESTADO-5USZXI4N",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"no se puede reenviar: estado actual CREADO\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:11:06.300119+00:00"
+    },
+    {
+      "tipo": "SIN_ROLE",
+      "descripcion": "User1 sin atributo role intenta CrearDocumento",
+      "doc_id": "DOC-B-NOROLE-2PQKITWM",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"el certificado del invocador no contiene atributo 'role'\"",
+      "intento": 1,
+      "timestamp": "2026-06-28T00:11:07.374216+00:00"
+    },
+    {
+      "tipo": "SIN_ROLE",
+      "descripcion": "User1 sin atributo role intenta CrearDocumento",
+      "doc_id": "DOC-B-NOROLE-DD8YEUPZ",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"el certificado del invocador no contiene atributo 'role'\"",
+      "intento": 2,
+      "timestamp": "2026-06-28T00:11:08.448777+00:00"
+    },
+    {
+      "tipo": "SIN_ROLE",
+      "descripcion": "User1 sin atributo role intenta CrearDocumento",
+      "doc_id": "DOC-B-NOROLE-BYGAKIOV",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"el certificado del invocador no contiene atributo 'role'\"",
+      "intento": 3,
+      "timestamp": "2026-06-28T00:11:09.522022+00:00"
+    },
+    {
+      "tipo": "SIN_ROLE",
+      "descripcion": "User1 sin atributo role intenta CrearDocumento",
+      "doc_id": "DOC-B-NOROLE-9H4M8UWY",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"el certificado del invocador no contiene atributo 'role'\"",
+      "intento": 4,
+      "timestamp": "2026-06-28T00:11:10.604889+00:00"
+    },
+    {
+      "tipo": "SIN_ROLE",
+      "descripcion": "User1 sin atributo role intenta CrearDocumento",
+      "doc_id": "DOC-B-NOROLE-0II0I9GB",
+      "bloqueado": true,
+      "mensaje_chaincode": "Error: endorsement failure during invoke. response: status:500 message:\"el certificado del invocador no contiene atributo 'role'\"",
+      "intento": 5,
+      "timestamp": "2026-06-28T00:11:11.680738+00:00"
+    }
+  ]
+}

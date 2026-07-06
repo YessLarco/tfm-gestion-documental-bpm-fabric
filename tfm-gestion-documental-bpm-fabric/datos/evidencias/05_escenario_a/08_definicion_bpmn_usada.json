@@ -1,0 +1,16 @@
+{
+    "id": "Process_GestionDocumental:4:c3df9f3a-6f82-11f1-9656-9e83cd510b43",
+    "key": "Process_GestionDocumental",
+    "category": "Camunda",
+    "description": null,
+    "name": "Gesti\u00f3n documental",
+    "version": 4,
+    "resource": "TO-BE_v2.bpmn",
+    "deploymentId": "c3dc91f8-6f82-11f1-9656-9e83cd510b43",
+    "diagram": null,
+    "suspended": false,
+    "tenantId": null,
+    "versionTag": null,
+    "historyTimeToLive": 180,
+    "startableInTasklist": true
+}

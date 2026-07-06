@@ -1,0 +1,20 @@
+=== registrador ===
+            1.2.3.4.5.6.7.8.1: 
+                {"attrs":{"role":"registrador"}}
+
+=== revisor ===
+            1.2.3.4.5.6.7.8.1: 
+                {"attrs":{"role":"revisor"}}
+
+=== legal ===
+            1.2.3.4.5.6.7.8.1: 
+                {"attrs":{"role":"legal"}}
+
+=== publicador ===
+            1.2.3.4.5.6.7.8.1: 
+                {"attrs":{"role":"publicador"}}
+
+=== auditor ===
+            1.2.3.4.5.6.7.8.1: 
+                {"attrs":{"role":"auditor"}}
+
