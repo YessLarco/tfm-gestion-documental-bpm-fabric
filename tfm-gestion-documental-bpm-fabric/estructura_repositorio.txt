@@ -21,7 +21,7 @@
 ├── chaincode-fabric
 │   └── gestiondocumental
 ├── docker
-│   ├── fabric-network -> /home/azureuser/bpm-fabric/fabric/fabric-samples
+│   ├── fabric-network -> <HOME>/bpm-fabric/fabric/fabric-samples
 │   └── docker-compose.yml
 ├── evidencias
 │   ├── 00_versionado
@@ -41,7 +41,7 @@
 -------------------------------------------------------------------
 2. API GATEWAY / WORKER EN GO
 -------------------------------------------------------------------
-/home/azureuser/proyecto-bpm-fabric/api-gateway
+<HOME>/proyecto-bpm-fabric/api-gateway
 ├── cmd
 │   └── main.go
 ├── configs
@@ -67,7 +67,7 @@
 -------------------------------------------------------------------
 3. CHAINCODE gestiondocumental
 -------------------------------------------------------------------
-/home/azureuser/proyecto-bpm-fabric/chaincode-fabric/gestiondocumental
+<HOME>/proyecto-bpm-fabric/chaincode-fabric/gestiondocumental
 ├── contract
 │   ├── contrato.go
 │   ├── helpers.go
@@ -103,13 +103,13 @@
 -------------------------------------------------------------------
 4. MODELO BPMN EJECUTABLE
 -------------------------------------------------------------------
-/home/azureuser/Process_GestionDocumental_1.bpmn
+<HOME>/Process_GestionDocumental_1.bpmn
 
 -------------------------------------------------------------------
 5. ESCENARIOS DE VALIDACIÓN CUANTITATIVA
 -------------------------------------------------------------------
 -- Escenario A (Completitud de Trazabilidad):
-/home/azureuser/escenario-a
+<HOME>/escenario-a
 ├── analizar_reporte.py
 ├── escenario_a.py
 └── generar_dataset.py
@@ -117,7 +117,7 @@
 0 directories, 3 files
 
 -- Escenario B (Tasa de Detección de Manipulaciones):
-/home/azureuser/escenario-b
+<HOME>/escenario-b
 └── escenario_b.py
 
 0 directories, 1 file
@@ -126,8 +126,8 @@
 6. REPORTES JSON DE EJECUCIÓN
 -------------------------------------------------------------------
 -- Reportes en el home:
--rw-rw-r-- 1 azureuser azureuser  7835 Jun 27 04:58 /home/azureuser/reporte_A.json
--rw-rw-r-- 1 azureuser azureuser 18254 Jun 28 00:11 /home/azureuser/reporte_B.json
+-rw-rw-r-- 1 azureuser azureuser  7835 Jun 27 04:58 <HOME>/reporte_A.json
+-rw-rw-r-- 1 azureuser azureuser 18254 Jun 28 00:11 <HOME>/reporte_B.json
 
 -- Extracto de estructura del reporte del Escenario A:
 Campos del reporte: ['fecha', 'total', 'exitos_trazabilidad', 'CT_porcentaje', 'errores', 'mezcla_usada', 'detalle']
@@ -155,7 +155,7 @@ Tipos de ataque probados: ['SoD-1', 'SEQ-1', 'UNI-1', 'ABAC', 'INMUTABILIDAD', '
 -------------------------------------------------------------------
 7. EVIDENCIAS DE VALIDACIÓN
 -------------------------------------------------------------------
-/home/azureuser/proyecto-bpm-fabric/evidencias
+<HOME>/proyecto-bpm-fabric/evidencias
 ├── 00_versionado
 │   ├── host_info.txt
 │   ├── puertos.md
