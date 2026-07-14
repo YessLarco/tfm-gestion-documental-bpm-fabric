@@ -1,0 +1,166 @@
+===================================================================
+  EVIDENCIA DE PASOS DE DESPLIEGUE DEL PILOTO EXPERIMENTAL
+  Trabajo Fin de Máster — Gestión Documental BPM + Fabric
+  Fecha de captura: 2026-07-14 05:10:25 UTC
+===================================================================
+
+-------------------------------------------------------------------
+PASO 1. RED HYPERLEDGER FABRIC Y CREACIÓN DEL CANAL
+-------------------------------------------------------------------
+
+Comando de despliegue original:
+  cd ~/bpm-fabric/fabric/fabric-samples/test-network
+  ./network.sh up createChannel -c mychannel -ca
+
+-- Contenedores Fabric activos (evidencia de red desplegada):
+dev-peer0.org2.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5       Up 46 minutes
+dev-peer0.org1.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5       Up 46 minutes
+peer0.org2.example.com  Up 46 minutes
+orderer.example.com     Up 46 minutes
+peer0.org1.example.com  Up 46 minutes
+ca_orderer      Up 46 minutes
+ca_org2 Up 46 minutes
+ca_org1 Up 46 minutes
+
+-- Canal activo:
+2026-07-14 05:10:25.126 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+Channels peers has joined:
+mychannel
+
+-------------------------------------------------------------------
+PASO 2. IDENTIDADES REGISTRADAS Y EMITIDAS CON ATRIBUTO role=
+-------------------------------------------------------------------
+
+Comando original de registro (por cada rol):
+  fabric-ca-client register --caname ca-org1 --id.name <rol> \
+    --id.attrs 'role=<rol>:ecert' ...
+
+-- Directorios de identidades emitidas:
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/auditor@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/legal@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/publicador@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/registrador@org1.example.com/
+<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/revisor@org1.example.com/
+
+-- Verificación del atributo role= embebido en cada certificado X.509:
+
+  === Identidad: registrador ===
+  Contenido OID: {"attrs":{"role":"registrador"}}
+
+  === Identidad: revisor ===
+  Contenido OID: {"attrs":{"role":"revisor"}}
+
+  === Identidad: legal ===
+  Contenido OID: {"attrs":{"role":"legal"}}
+
+  === Identidad: publicador ===
+  Contenido OID: {"attrs":{"role":"publicador"}}
+
+  === Identidad: auditor ===
+  Contenido OID: {"attrs":{"role":"auditor"}}
+
+-------------------------------------------------------------------
+PASO 3. EMPAQUETADO Y DESPLIEGUE DEL CHAINCODE gestiondocumental
+-------------------------------------------------------------------
+
+Comando de despliegue original:
+  ./network.sh deployCC -ccn gestiondocumental \
+    -ccp ~/proyecto-bpm-fabric/chaincode-fabric/gestiondocumental \
+    -ccl go -c mychannel -ccv 1.1 -ccs 1
+
+-- Chaincode desplegado y committed en el canal:
+Committed chaincode definition for chaincode 'gestiondocumental' on channel 'mychannel':
+Version: 1.1, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2MSP: true]
+
+-- Contenedores del chaincode instanciados por los peers:
+dev-peer0.org2.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5       dev-peer0.org2.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5-a7d8dc2a7ae18c250a57fb347b55c049c8b8ceba9a0c235a7787059cf45d49d0
+dev-peer0.org1.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5       dev-peer0.org1.example.com-gestiondocumental_1.1-466d826c595cfd091e5cb8129d9f49d2064dba5889cae8bb7ee721757ad7afb5-44b5916c48ded20b1703fa83931a536faddd971b3f2d492aff3eba1e8229cd56
+
+-- Verificación funcional (invocación como auditor):
+  Consulta de prueba: ConsultarHistorial('DOC-TEST-001')
+{
+    "doc_id": "DOC-TEST-001",
+    "document_hash": "922b553e3ecae8b0ac42cb63d2cbf461078f1f5a2e91e480a2b0b6fac8584dfe",
+    "version": 1,
+    "estado_actual": "PUBLICADO",
+    "registrador_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "revisor_id": "eDUwOTo6Q049cmV2aXNvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "legal_id": "eDUwOTo6Q049bGVnYWwsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+    "publicador_id": "eDUwOTo6Q049cHVibGljYWRvcixPVT1vcmcxK09VPWNsaWVudCtPVT1kZXBhcnRtZW50MSxPPUh5cGVybGVkZ2VyLFNUPU5vcnRoIENhcm9saW5hLEM9VVM6OkNOPWNhLm9yZzEuZXhhbXBsZS5jb20sTz1vcmcxLmV4YW1wbGUuY29tLEw9RHVyaGFtLFNUPU5vcnRoIENhcm9saW5hLEM9VVM=",
+    "historial": [
+        {
+            "event_type": "CREADO",
+            "actor_id": "eDUwOTo6Q049cmVnaXN0cmFkb3IsT1U9b3JnMStPVT1jbGllbnQrT1U9ZGVwYXJ0bWVudDEsTz1IeXBlcmxlZGdlcixTVD1Ob3J0aCBDYXJvbGluYSxDPVVTOjpDTj1jYS5vcmcxLmV4YW1wbGUuY29tLE89b3JnMS5leGFtcGxlLmNvbSxMPUR1cmhhbSxTVD1Ob3J0aCBDYXJvbGluYSxDPVVT",
+            "actor_role": "registrador",
+            "hash": "922b553e3ecae8b0ac42cb63d2cbf461078f1f5a2e91e480a2b0b6fac8584dfe",
+            "version": 1,
+            "timestamp": "2026-06-25T02:25:24Z",
+            "comentario": ""
+        },
+        {
+
+-------------------------------------------------------------------
+PASO 4. CAMUNDA Y DESPLIEGUE DEL MODELO BPMN
+-------------------------------------------------------------------
+
+Comando de arranque original:
+  cd ~/proyecto-bpm-fabric/camunda
+  docker compose up -d
+
+-- Contenedores Camunda activos:
+camunda-bpm     Up 2 hours
+postgres-camunda        Up 2 hours
+
+-- Camunda REST API respondiendo (versión del motor):
+{"version":"7.24.0"}
+
+-- Definiciones del proceso desplegadas en Camunda:
+[
+    {
+        "id": "Process_GestionDocumental:4:c3df9f3a-6f82-11f1-9656-9e83cd510b43",
+        "key": "Process_GestionDocumental",
+        "category": "Camunda",
+        "description": null,
+        "name": "Gesti\u00f3n documental",
+        "version": 4,
+        "resource": "TO-BE_v2.bpmn",
+        "deploymentId": "c3dc91f8-6f82-11f1-9656-9e83cd510b43",
+        "diagram": null,
+        "suspended": false,
+        "tenantId": null,
+        "versionTag": null,
+        "historyTimeToLive": 180,
+        "startableInTasklist": true
+    }
+]
+
+-------------------------------------------------------------------
+PASO 5. WORKER EN GO EN ESCUCHA (POOL DE IDENTIDADES POR ROL)
+-------------------------------------------------------------------
+
+Comando de arranque original:
+  cd ~/proyecto-bpm-fabric/api-gateway
+  export PATH=$PATH:/usr/local/go/bin
+  nohup go run ./cmd > ~/worker.log 2>&1 &
+
+-- Proceso Go en ejecución:
+
+-- Log de arranque del worker (primeras 5 líneas, muestran el pool cargado):
+  nohup: ignoring input
+  2026/06/25 02:25:24 [main] offchain en /opt/tfm-camunda/offchain
+  2026/06/25 02:25:24 [main] fabric enabled=true
+  2026/06/25 02:25:24 [main] HTTP API escuchando en :3000
+  2026/06/25 02:25:24 [worker] iniciando: workerId=api-gateway-worker, topics=8, fabric=true
+
+-- Configuración de identidades del Worker (extracto del .env):
+  FABRIC_ENABLED=true
+  FABRIC_IDENTITIES_ROOT=<HOME>/bpm-fabric/fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users
+  FABRIC_USER_DOMAIN=org1.example.com
+
+-- Endpoint HTTP del Worker respondiendo:
+
+===================================================================
+  ESTADO GENERAL DEL DESPLIEGUE: LOS 5 PASOS COMPLETADOS
+===================================================================
