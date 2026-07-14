@@ -1,0 +1,216 @@
+===================================================================
+  ESTRUCTURA DEL REPOSITORIO DEL PILOTO EXPERIMENTAL
+  Trabajo Fin de Máster — Gestión Documental BPM + Fabric
+  Fecha de captura: 2026-07-14 04:50:00 UTC
+===================================================================
+
+-------------------------------------------------------------------
+1. RAÍZ DEL PROYECTO (~/proyecto-bpm-fabric/)
+-------------------------------------------------------------------
+.
+├── api-gateway
+│   ├── cmd
+│   ├── configs
+│   ├── internal
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── go.mod
+│   └── go.sum
+├── bpmn-models
+├── chaincode
+├── chaincode-fabric
+│   └── gestiondocumental
+├── docker
+│   ├── fabric-network -> /home/azureuser/bpm-fabric/fabric/fabric-samples
+│   └── docker-compose.yml
+├── evidencias
+│   ├── 00_versionado
+│   ├── 01_identidades
+│   ├── 02_chaincode
+│   ├── 03_e2e_test
+│   ├── 04_e2e_completo
+│   ├── 05_escenario_a
+│   ├── 06_escenario_b
+│   └── 07_versiones
+├── resultados
+├── scripts-prueba
+└── README.md
+
+21 directories, 6 files
+
+-------------------------------------------------------------------
+2. API GATEWAY / WORKER EN GO
+-------------------------------------------------------------------
+/home/azureuser/proyecto-bpm-fabric/api-gateway
+├── cmd
+│   └── main.go
+├── configs
+├── internal
+│   ├── camunda
+│   │   ├── client.go
+│   │   └── worker.go
+│   ├── config
+│   │   └── config.go
+│   ├── fabric
+│   │   └── client.go
+│   ├── handlers
+│   │   └── handlers.go
+│   └── offchain
+│       └── repo.go
+├── Dockerfile
+├── README.md
+├── go.mod
+└── go.sum
+
+8 directories, 11 files
+
+-------------------------------------------------------------------
+3. CHAINCODE gestiondocumental
+-------------------------------------------------------------------
+/home/azureuser/proyecto-bpm-fabric/chaincode-fabric/gestiondocumental
+├── contract
+│   ├── contrato.go
+│   ├── helpers.go
+│   ├── modelo.go
+│   └── modelo.go.bak
+├── vendor
+│   ├── github.com
+│   │   ├── go-openapi
+│   │   ├── gobuffalo
+│   │   ├── golang
+│   │   ├── hyperledger
+│   │   ├── joho
+│   │   ├── josharian
+│   │   ├── mailru
+│   │   ├── rogpeppe
+│   │   └── xeipuuv
+│   ├── golang.org
+│   │   └── x
+│   ├── google.golang.org
+│   │   ├── genproto
+│   │   ├── grpc
+│   │   └── protobuf
+│   ├── gopkg.in
+│   │   └── yaml.v3
+│   └── modules.txt
+├── README.md
+├── go.mod
+├── go.sum
+└── main.go
+
+20 directories, 9 files
+
+-------------------------------------------------------------------
+4. MODELO BPMN EJECUTABLE
+-------------------------------------------------------------------
+/home/azureuser/Process_GestionDocumental_1.bpmn
+
+-------------------------------------------------------------------
+5. ESCENARIOS DE VALIDACIÓN CUANTITATIVA
+-------------------------------------------------------------------
+-- Escenario A (Completitud de Trazabilidad):
+/home/azureuser/escenario-a
+├── analizar_reporte.py
+├── escenario_a.py
+└── generar_dataset.py
+
+0 directories, 3 files
+
+-- Escenario B (Tasa de Detección de Manipulaciones):
+/home/azureuser/escenario-b
+└── escenario_b.py
+
+0 directories, 1 file
+
+-------------------------------------------------------------------
+6. REPORTES JSON DE EJECUCIÓN
+-------------------------------------------------------------------
+-- Reportes en el home:
+-rw-rw-r-- 1 azureuser azureuser  7835 Jun 27 04:58 /home/azureuser/reporte_A.json
+-rw-rw-r-- 1 azureuser azureuser 18254 Jun 28 00:11 /home/azureuser/reporte_B.json
+
+-- Extracto de estructura del reporte del Escenario A:
+Campos del reporte: ['fecha', 'total', 'exitos_trazabilidad', 'CT_porcentaje', 'errores', 'mezcla_usada', 'detalle']
+Total documentos procesados: 10
+Estructura de un elemento del detalle:
+  - doc_id
+  - pdf_path
+  - decision_revisor
+  - decision_legal
+  - inicio
+  - process_instance_id
+  - estado_final_camunda
+  - ruta_seguida
+  - estado_onchain
+  - eventos_onchain
+  - ok_trazabilidad
+  - error
+  - fin
+
+-- Extracto de estructura del reporte del Escenario B:
+Campos del reporte: ['fecha', 'duracion_segundos', 'total_intentos', 'bloqueados_correctamente', 'TDR_porcentaje', 'por_tipo', 'detalle']
+Total ataques ejecutados: 40
+Tipos de ataque probados: ['SoD-1', 'SEQ-1', 'UNI-1', 'ABAC', 'INMUTABILIDAD', 'HASH-1', 'ESTADO_MAQUINA', 'SIN_ROLE']
+
+-------------------------------------------------------------------
+7. EVIDENCIAS DE VALIDACIÓN
+-------------------------------------------------------------------
+/home/azureuser/proyecto-bpm-fabric/evidencias
+├── 00_versionado
+│   ├── host_info.txt
+│   ├── puertos.md
+│   └── snapshot_inicial.txt
+├── 01_identidades
+│   ├── atributos_x509.txt
+│   └── identidades_registradas.txt
+├── 02_chaincode
+│   ├── 00_resumen.txt
+│   ├── 01_flujo_feliz_crear.txt
+│   ├── 02_flujo_feliz_aprobar_revision.txt
+│   ├── 03_flujo_feliz_aprobar_legal.txt
+│   ├── 04_flujo_feliz_publicar.txt
+│   ├── 05_flujo_feliz_historial.txt
+│   ├── 06_test_abac_registrador_no_aprueba.txt
+│   ├── 07_test_uni1_no_duplicar.txt
+│   ├── 08_test_seq1_no_publicar_sin_legal.txt
+│   ├── 09_hash1_integridad_ok.txt
+│   ├── 10_hash1_manipulacion_detectada.txt
+│   ├── 11_historial_doc0001.txt
+│   └── 12_historial_doc0002.txt
+├── 03_e2e_test
+│   ├── 01_onchain_doc_test_001.json
+│   ├── 02_offchain_filesystem.txt
+│   ├── 03_sha256_verificacion.txt
+│   ├── 04_camunda_historial.json
+│   └── 05_worker_log.txt
+├── 04_e2e_completo
+│   ├── 01_onchain_doc_publicado.json
+│   ├── 02_camunda_instancia_completed.json
+│   ├── 03_camunda_actividades.json
+│   ├── 04_worker_log_completo.txt
+│   ├── 05_sha256.txt
+│   └── 06_offchain_filesystem.txt
+├── 05_escenario_a
+│   ├── 01_reporte_completo.json
+│   ├── 02_analisis_metricas.txt
+│   ├── 03_estado_onchain_dataset.txt
+│   ├── 04_offchain_dataset.txt
+│   ├── 05_sha256_pdfs_originales.txt
+│   ├── 06_sha256_offchain.txt
+│   ├── 07_worker_log_escenario_a.txt
+│   └── 08_definicion_bpmn_usada.json
+├── 06_escenario_b
+│   ├── 01_reporte_completo.json
+│   ├── 02_resumen_ejecutivo.txt
+│   ├── 03_ejemplos_por_categoria.txt
+│   ├── 04_escenario_b_script.py
+│   └── 05_version_chaincode.txt
+└── 07_versiones
+    ├── estructura_repositorio.txt
+    └── evidencia_versiones.txt
+
+8 directories, 44 files
+
+===================================================================
+  FIN
+===================================================================
