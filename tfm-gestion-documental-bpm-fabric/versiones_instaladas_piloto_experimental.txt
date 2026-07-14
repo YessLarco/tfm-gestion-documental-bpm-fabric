@@ -13,7 +13,7 @@ Release:        22.04
 Codename:       jammy
 
 -- Kernel:
-Linux vm-bpm-fabric 6.8.0-1059-azure #65~22.04.1-Ubuntu SMP Thu May 28 16:59:19 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Linux <VM_NAME> 6.8.0-1059-azure #65~22.04.1-Ubuntu SMP Thu May 28 16:59:19 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
 
 -------------------------------------------------------------------
 2. DOCKER
