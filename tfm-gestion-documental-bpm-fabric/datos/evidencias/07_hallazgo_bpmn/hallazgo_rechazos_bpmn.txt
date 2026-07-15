@@ -1,0 +1,91 @@
+===================================================================
+  EVIDENCIA DEL HALLAZGO: SINCRONIZACIÓN DE RECHAZOS ON-CHAIN
+  Trabajo Fin de Máster — Gestión Documental BPM + Fabric
+  Fecha de captura: 2026-07-15 05:03:45 UTC
+===================================================================
+
+Este documento demuestra que:
+  1. El chaincode soporta nativamente los eventos RECHAZADO.
+  2. El BPMN v1 no los invocaba en la rama 'No' de los gateways.
+  3. El BPMN v2 corrige esta limitación conectando ambas ramas.
+
+-------------------------------------------------------------------
+PARTE 1 — El chaincode SÍ soporta rechazos
+-------------------------------------------------------------------
+
+Extracto del código fuente del chaincode que define los eventos
+de rechazo como parte del modelo (constantes en modelo.go):
+
+  	EstadoRechazadoRevisor = "RECHAZADO_REVISOR"
+  	EstadoRechazadoLegal  = "RECHAZADO_LEGAL"
+  	EventoRechazadoRevisor  = "RECHAZADO_REVISOR"
+  	EventoRechazadoLegal    = "RECHAZADO_LEGAL"
+
+Firma de las funciones AprobarRevision y AprobarLegal (aceptan
+parámetro booleano aprobado, que si es false registra el evento
+RECHAZADO_* en el historial):
+
+  func (c *GestionDocumentalContract) AprobarRevision(
+  	ctx contractapi.TransactionContextInterface,
+  	docID string, aprobado bool, comentario string,
+
+  func (c *GestionDocumentalContract) AprobarLegal(
+  	ctx contractapi.TransactionContextInterface,
+  	docID string, aprobado bool, comentario string,
+
+-------------------------------------------------------------------
+PARTE 2 — El BPMN v1 NO invocaba al chaincode en la rama 'No'
+-------------------------------------------------------------------
+
+En el BPMN v1, los gateways exclusivos GW_DocumentoAprobadoPorRevisor
+y GW_CumpleValidacionLegal dirigen la rama 'No' directamente a
+UT_CorregirYCargarNuevaVersion sin pasar por ninguna Service Task.
+
+Extracto de las Sequence Flow con etiqueta 'No' en el BPMN v1:
+
+  <bpmn:sequenceFlow id="Flow_1g1haei" name="No" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="UT_CorregirYCargarNuevaVersion">
+  <bpmn:sequenceFlow id="Flow_06o27jw" name="No" sourceRef="GW_CumpleValidacionLegal" targetRef="UT_CorregirYCargarNuevaVersion">
+
+Observación: el targetRef de la rama 'No' apunta directamente a
+UT_CorregirYCargarNuevaVersion (User Task), no a una Service Task
+de sincronización on-chain.
+
+-------------------------------------------------------------------
+PARTE 3 — El BPMN v2 SÍ invoca al chaincode en ambas ramas
+-------------------------------------------------------------------
+
+El BPMN v2 introduce Service Tasks de sincronización que garantizan
+que toda decisión humana (aprobar o rechazar) se propague on-chain:
+
+Service Tasks de aprobado/rechazado presentes en el BPMN v2:
+
+  id="ST_AprobadoLegal"
+  id="ST_AprobadoRevisor"
+  id="ST_RechazadoLegal"
+  id="ST_RechazadoRevisor"
+
+Topics Camunda usados (los mismos que el chaincode ya conoce):
+
+  camunda:topic="registrar-decision-legal"
+  camunda:topic="registrar-decision-revisor"
+
+Extracto de las Sequence Flow con etiqueta 'No' en el BPMN v2
+(nótese que ahora apuntan a Service Tasks de sincronización):
+
+  <bpmn:sequenceFlow id="Flow_1g1haei" name="No" sourceRef="GW_DocumentoAprobadoPorRevisor" targetRef="ST_RechazadoRevisor">
+  <bpmn:sequenceFlow id="Flow_06o27jw" name="No" sourceRef="GW_CumpleValidacionLegal" targetRef="ST_RechazadoLegal">
+
+-------------------------------------------------------------------
+CONCLUSIÓN
+-------------------------------------------------------------------
+
+El hallazgo del 80% de CT global en el Escenario A no proviene de
+una limitación del chaincode gestiondocumental v1.1, sino de una
+decisión estructural del BPMN v1 (el diagrama que se ejecutó en
+el experimento). El BPMN v2, validado estructuralmente, resuelve
+esta limitación sin requerir modificación alguna del contrato
+inteligente, del worker Go, ni de la red Fabric.
+
+===================================================================
+  FIN
+===================================================================
